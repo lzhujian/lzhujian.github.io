@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>空心菜的BLOG</title>
+    <link>https://lzhujian.github.io/</link>
+    <description>Recent content on 空心菜的BLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 30 Jan 2019 00:05:39 +0800</lastBuildDate>
+    
+        <atom:link href="https://lzhujian.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://lzhujian.github.io/about/</link>
+      <pubDate>Wed, 30 Jan 2019 00:05:39 +0800</pubDate>
+      
+      <guid>https://lzhujian.github.io/about/</guid>
+      
+        <description>
+
+&lt;h3 id=&#34;关于我&#34;&gt;关于我&lt;/h3&gt;
+
+&lt;p&gt;一名小小程序员，热爱技术，热爱生活。&lt;/p&gt;
+
+&lt;h3 id=&#34;关于本站&#34;&gt;关于本站&lt;/h3&gt;
+
+&lt;p&gt;本站使用Hugo生成静态页面，主题使用&lt;code&gt;hugo-theme-jane&lt;/code&gt;，发布于&lt;code&gt;github&lt;/code&gt;。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>欢迎</title>
+      <link>https://lzhujian.github.io/post/welcome/</link>
+      <pubDate>Wed, 30 Jan 2019 00:24:09 +0800</pubDate>
+      
+      <guid>https://lzhujian.github.io/post/welcome/</guid>
+      
+        <description>&lt;p&gt;欢迎来到空心菜的BLOG。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+  </channel>
+</rss>
