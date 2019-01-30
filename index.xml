@@ -20,13 +20,19 @@
       
         <description>
 
-&lt;h3 id=&#34;关于我&#34;&gt;关于我&lt;/h3&gt;
+&lt;h4 id=&#34;关于我&#34;&gt;关于我&lt;/h4&gt;
 
-&lt;p&gt;一名小小程序员，热爱技术，热爱生活。&lt;/p&gt;
+&lt;p&gt;我叫李龙，是一名C++开发工程师，主要从事于音视频编解码和传输协议的开发，Python和Go打杂师。&lt;/p&gt;
 
-&lt;h3 id=&#34;关于本站&#34;&gt;关于本站&lt;/h3&gt;
+&lt;p&gt;2012年计算机专业硕士毕业，曾经北漂，目前定居武汉。身上没有牛逼哄哄的Tags，希望能将技术之路走下去，努力工作，好好生活。&lt;/p&gt;
 
-&lt;p&gt;本站使用Hugo生成静态页面，主题使用&lt;code&gt;hugo-theme-jane&lt;/code&gt;，发布于&lt;code&gt;github&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;工作之余，爱好打打羽毛球，看看书，跑跑步，当然很多时候在带娃，哈哈 :)&lt;/p&gt;
+
+&lt;h4 id=&#34;关于本站&#34;&gt;关于本站&lt;/h4&gt;
+
+&lt;p&gt;本站主要用于纪录工作中的一些心得，也包括一些读书和生活感悟。&lt;/p&gt;
+
+&lt;p&gt;本站使用Hugo生成静态页面，主题使用&lt;code&gt;hugo-theme-jane&lt;/code&gt;，发布于&lt;a href=&#34;https://github.com/lzhujian/lzhujian.github.io&#34;&gt;&lt;code&gt;github&lt;/code&gt;&lt;/a&gt;。&lt;/p&gt;
 </description>
       
     </item>
