@@ -5,14 +5,14 @@
     <link>https://lzhujian.github.io/</link>
     <description>Recent content on 空心菜的BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>zh-cn</language>
     <lastBuildDate>Wed, 30 Jan 2019 00:05:39 +0800</lastBuildDate>
     
         <atom:link href="https://lzhujian.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>About</title>
+      <title>关于</title>
       <link>https://lzhujian.github.io/about/</link>
       <pubDate>Wed, 30 Jan 2019 00:05:39 +0800</pubDate>
       
@@ -20,7 +20,7 @@
       
         <description>
 
-&lt;h4 id=&#34;关于我&#34;&gt;关于我&lt;/h4&gt;
+&lt;h2 id=&#34;关于我&#34;&gt;关于我&lt;/h2&gt;
 
 &lt;p&gt;我叫李龙，是一名C++开发工程师，主要从事于音视频编解码和传输协议的开发，Python和Go打杂师。&lt;/p&gt;
 
@@ -28,11 +28,17 @@
 
 &lt;p&gt;工作之余，爱好打打羽毛球，看看书，跑跑步，当然很多时候在带娃，哈哈 :)&lt;/p&gt;
 
-&lt;h4 id=&#34;关于本站&#34;&gt;关于本站&lt;/h4&gt;
+&lt;h2 id=&#34;关于本站&#34;&gt;关于本站&lt;/h2&gt;
 
 &lt;p&gt;本站主要用于纪录工作中的一些心得，也包括一些读书和生活感悟。&lt;/p&gt;
 
-&lt;p&gt;本站使用Hugo生成静态页面，主题使用&lt;code&gt;hugo-theme-jane&lt;/code&gt;，发布于&lt;a href=&#34;https://github.com/lzhujian/lzhujian.github.io&#34;&gt;&lt;code&gt;github&lt;/code&gt;&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;本站使用&lt;code&gt;Hugo&lt;/code&gt;生成静态页面，主题使用&lt;code&gt;hugo-theme-jane&lt;/code&gt;，发布于&lt;a href=&#34;https://github.com/lzhujian/lzhujian.github.io&#34;&gt;&lt;code&gt;github&lt;/code&gt;&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h2 id=&#34;联系我&#34;&gt;联系我&lt;/h2&gt;
+
+&lt;p&gt;email: lzhujian@gmail.com&lt;/p&gt;
+
+&lt;p&gt;wechat: lzhujian&lt;/p&gt;
 </description>
       
     </item>
