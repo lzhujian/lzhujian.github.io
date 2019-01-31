@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>https://lzhujian.github.io/post/face-recognition-with-facenet/</loc>
+    <lastmod>2019-01-31T14:41:16+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://lzhujian.github.io/post/welcome/</loc>
     <lastmod>2019-01-30T00:24:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -23,14 +30,43 @@
   </url>
   
   <url>
+    <loc>https://lzhujian.github.io/tags/facenet/</loc>
+    <lastmod>2019-01-31T14:41:16+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://lzhujian.github.io/tags/mtcnn/</loc>
+    <lastmod>2019-01-31T14:41:16+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://lzhujian.github.io/post/</loc>
-    <lastmod>2019-01-30T00:24:09+08:00</lastmod>
+    <lastmod>2019-01-31T14:41:16+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://lzhujian.github.io/tags/python/</loc>
+    <lastmod>2019-01-31T14:41:16+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://lzhujian.github.io/tags/</loc>
+    <lastmod>2019-01-31T14:41:16+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://lzhujian.github.io/categories/tensorflow/</loc>
+    <lastmod>2019-01-31T14:41:16+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

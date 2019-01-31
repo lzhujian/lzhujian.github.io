@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Index on 空心菜的BLOG</title>
+    <link>https://lzhujian.github.io/categories/index/</link>
+    <description>Recent content in Index on 空心菜的BLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 31 Jan 2019 14:41:16 +0800</lastBuildDate>
+    
+	<atom:link href="https://lzhujian.github.io/categories/index/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>基于facenet实现人脸识别</title>
+      <link>https://lzhujian.github.io/post/face-recognition-with-facenet/</link>
+      <pubDate>Thu, 31 Jan 2019 14:41:16 +0800</pubDate>
+      
+      <guid>https://lzhujian.github.io/post/face-recognition-with-facenet/</guid>
+      <description>人脸识别是计算视觉和人工智能的一个热点领域，目前实现人脸识别的方法和框架有很多，比如face++, OpenFace, FaceNet等。本文主要介绍使用人脸检</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>标签 - 空心菜的BLOG</title>
+  <title>基于facenet实现人脸识别-1 - 空心菜的BLOG</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,6 +23,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="李龙" />
+  <meta name="description" content="人脸识别是计算视觉和人工智能的一个热点领域，目前实现人脸识别的方法和框架有很多，比如face&#43;&#43;, OpenFace, FaceNet等。本系列文章一共有三篇，" />
+
 
 
 
@@ -32,8 +34,7 @@
 <meta name="generator" content="Hugo 0.53" />
 
 
-<link rel="canonical" href="https://lzhujian.github.io/tags/" />
-<link href="https://lzhujian.github.io/tags/index.xml" rel="alternate" type="application/rss+xml" title="空心菜的BLOG" />
+<link rel="canonical" href="https://lzhujian.github.io/post/face-recognition-with-facenet/" />
 
 
 
@@ -55,18 +56,26 @@
 
 
 
-<meta property="og:title" content="Tags" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://lzhujian.github.io/tags/" />
-<meta property="og:updated_time" content="2019-01-31T14:41:16&#43;08:00"/>
+<meta property="og:title" content="基于facenet实现人脸识别-1" />
+<meta property="og:description" content="人脸识别是计算视觉和人工智能的一个热点领域，目前实现人脸识别的方法和框架有很多，比如face&#43;&#43;, OpenFace, FaceNet等。本系列文章一共有三篇，" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lzhujian.github.io/post/face-recognition-with-facenet/" /><meta property="article:published_time" content="2019-01-31T14:41:16&#43;08:00"/>
+<meta property="article:modified_time" content="2019-01-31T14:41:16&#43;08:00"/>
 
-<meta itemprop="name" content="Tags">
-<meta itemprop="description" content="">
+<meta itemprop="name" content="基于facenet实现人脸识别-1">
+<meta itemprop="description" content="人脸识别是计算视觉和人工智能的一个热点领域，目前实现人脸识别的方法和框架有很多，比如face&#43;&#43;, OpenFace, FaceNet等。本系列文章一共有三篇，">
 
+
+<meta itemprop="datePublished" content="2019-01-31T14:41:16&#43;08:00" />
+<meta itemprop="dateModified" content="2019-01-31T14:41:16&#43;08:00" />
+<meta itemprop="wordCount" content="576">
+
+
+
+<meta itemprop="keywords" content="python,mtcnn,facenet," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Tags"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="基于facenet实现人脸识别-1"/>
+<meta name="twitter:description" content="人脸识别是计算视觉和人工智能的一个热点领域，目前实现人脸识别的方法和框架有很多，比如face&#43;&#43;, OpenFace, FaceNet等。本系列文章一共有三篇，"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -232,7 +241,7 @@
 
       </li>
     
-        <li class="menu-item active">
+        <li class="menu-item">
         
           
           
@@ -275,66 +284,153 @@
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">基于facenet实现人脸识别-1</h1>
+      
+      <div class="post-meta">
+        <time datetime="2019-01-31" class="post-time">
+          2019-01-31
+        </time>
+        <div class="post-category">
+            <a href="https://lzhujian.github.io/categories/tensorflow/"> tensorflow </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#准备">准备</a></li>
+<li><a href="#下载model">下载model</a></li>
+<li><a href="#验证">验证</a></li>
+<li><a href="#总结">总结</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>人脸识别是计算视觉和人工智能的一个热点领域，目前实现人脸识别的方法和框架有很多，比如face++, OpenFace, FaceNet等。本系列文章一共有三篇，介绍使用人脸检测的深度学习模型<code>MTCNN</code>和人脸识别的深度学习模型<code>FaceNet</code>实现人脸识别。本文为系列文章的第一篇，主要介绍facenet环境的安装和验证。</p>
+
+<h2 id="准备">准备</h2>
+
+<p>本文演示的环境为Windows 10 + python3.5</p>
+
+<p>下载安装 <a href="https://repo.continuum.io/archive/Anaconda3-2018.12-Windows-x86_64.exe">Anaconda3</a>，新建一个tensorflow的environment，然后打开终端，克隆facenet并安装tensorflow, scipy等libraries</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">git clone https://github.com/davidsandberg/facenet.git
+<span class="nb">cd</span> facenet
+pip install -r requirements.txt</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="下载model">下载model</h2>
+
+<p>facnet提供了 Pre-trained models，在lfw验证的正确率达到99%以上，如果需要训练自己的模型，可以参考<a href="https://github.com/davidsandberg/facenet/wiki/Classifier-training-of-inception-resnet-v1">facenet wiki</a></p>
+
+<p>模型的下载需要翻墙，我已经保存到百度云了，读者可以自行下载。链接：<a href="https://pan.baidu.com/s/1wm8TOYtSMzXqllo8UX-l0Q">https://pan.baidu.com/s/1wm8TOYtSMzXqllo8UX-l0Q</a>
+提取码：2ika。</p>
+
+<h2 id="验证">验证</h2>
+
+<p>使用src/compare.py对比两张照片人脸的欧式距离</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">python src\compare.py models\20180402-114759 data\images\Anthony_Hopkins_0001.jpg data\images\Anthony_Hopkins_0002.jpg</pre></td></tr></table>
+</div>
+</div>
+<p>输出结果如下：
+<img src="/image/facenet-compare-result.png" alt="facenet-compare-result" /></p>
+
+<h2 id="总结">总结</h2>
+
+<p>本文在win10环境下安装Anaconda3，并使用Anaconda3安装tensorflow及scipy等其他依赖库，最后运行src/compare.py验证运行环境正常。下一篇文章将介绍SVM人脸类聚。</p>
+
+<p>欢迎交流： lzhujian@gmail.com</p>
+
+    </div>
+
+    
+    
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://lzhujian.github.io/tags/python/">python</a>
+          <a href="https://lzhujian.github.io/tags/mtcnn/">mtcnn</a>
+          <a href="https://lzhujian.github.io/tags/facenet/">facenet</a>
           
-  
-  
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/welcome/">
+            <span class="next-text nav-default">欢迎</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
   
   
 
   
   
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="tag-cloud" style="padding: 5px 15px">
-      <div class="tag-cloud-title">
-        共计 3 个标签
-      </div>
-      <div class="tag-cloud-tags">
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://lzhujian.github.io/tags/facenet/"
-          style="font-size:1rem">facenet</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://lzhujian.github.io/tags/mtcnn/"
-          style="font-size:1rem">mtcnn</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://lzhujian.github.io/tags/python/"
-          style="font-size:1rem">python</a>
-        
-      
-      </div>
-    </div>
+
   
   
+
+  
+
+  
+
+  
+  
+    
+
 
 
         </div>

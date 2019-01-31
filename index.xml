@@ -44,6 +44,64 @@
     </item>
     
     <item>
+      <title>基于facenet实现人脸识别-1</title>
+      <link>https://lzhujian.github.io/post/face-recognition-with-facenet/</link>
+      <pubDate>Thu, 31 Jan 2019 14:41:16 +0800</pubDate>
+      
+      <guid>https://lzhujian.github.io/post/face-recognition-with-facenet/</guid>
+      
+        <description>
+
+&lt;p&gt;人脸识别是计算视觉和人工智能的一个热点领域，目前实现人脸识别的方法和框架有很多，比如face++, OpenFace, FaceNet等。本系列文章一共有三篇，介绍使用人脸检测的深度学习模型&lt;code&gt;MTCNN&lt;/code&gt;和人脸识别的深度学习模型&lt;code&gt;FaceNet&lt;/code&gt;实现人脸识别。本文为系列文章的第一篇，主要介绍facenet环境的安装和验证。&lt;/p&gt;
+
+&lt;h2 id=&#34;准备&#34;&gt;准备&lt;/h2&gt;
+
+&lt;p&gt;本文演示的环境为Windows 10 + python3.5&lt;/p&gt;
+
+&lt;p&gt;下载安装 &lt;a href=&#34;https://repo.continuum.io/archive/Anaconda3-2018.12-Windows-x86_64.exe&#34;&gt;Anaconda3&lt;/a&gt;，新建一个tensorflow的environment，然后打开终端，克隆facenet并安装tensorflow, scipy等libraries&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git clone https://github.com/davidsandberg/facenet.git
+&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; facenet
+pip install -r requirements.txt&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;下载model&#34;&gt;下载model&lt;/h2&gt;
+
+&lt;p&gt;facnet提供了 Pre-trained models，在lfw验证的正确率达到99%以上，如果需要训练自己的模型，可以参考&lt;a href=&#34;https://github.com/davidsandberg/facenet/wiki/Classifier-training-of-inception-resnet-v1&#34;&gt;facenet wiki&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;模型的下载需要翻墙，我已经保存到百度云了，读者可以自行下载。链接：&lt;a href=&#34;https://pan.baidu.com/s/1wm8TOYtSMzXqllo8UX-l0Q&#34;&gt;https://pan.baidu.com/s/1wm8TOYtSMzXqllo8UX-l0Q&lt;/a&gt;
+提取码：2ika。&lt;/p&gt;
+
+&lt;h2 id=&#34;验证&#34;&gt;验证&lt;/h2&gt;
+
+&lt;p&gt;使用src/compare.py对比两张照片人脸的欧式距离&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;python src\compare.py models\20180402-114759 data\images\Anthony_Hopkins_0001.jpg data\images\Anthony_Hopkins_0002.jpg&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;输出结果如下：
+&lt;img src=&#34;https://lzhujian.github.io/image/facenet-compare-result.png&#34; alt=&#34;facenet-compare-result&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+
+&lt;p&gt;本文在win10环境下安装Anaconda3，并使用Anaconda3安装tensorflow及scipy等其他依赖库，最后运行src/compare.py验证运行环境正常。下一篇文章将介绍SVM人脸类聚。&lt;/p&gt;
+
+&lt;p&gt;欢迎交流： lzhujian@gmail.com&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>欢迎</title>
       <link>https://lzhujian.github.io/post/welcome/</link>
       <pubDate>Wed, 30 Jan 2019 00:24:09 +0800</pubDate>
