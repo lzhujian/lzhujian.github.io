@@ -9,13 +9,26 @@
   </url>
   
   <url>
-    <loc>https://lzhujian.github.io/categories/</loc>
-    <lastmod>2019-02-14T15:56:04+08:00</lastmod>
+    <loc>https://lzhujian.github.io/post/</loc>
+    <lastmod>2019-07-31T00:01:24+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://lzhujian.github.io/post/</loc>
+    <loc>https://lzhujian.github.io/post/fish-tmux-vim-dev-console/</loc>
+    <lastmod>2019-07-31T00:01:24+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://lzhujian.github.io/</loc>
+    <lastmod>2019-07-31T00:01:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://lzhujian.github.io/categories/</loc>
     <lastmod>2019-02-14T15:56:04+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -55,12 +68,6 @@
     <lastmod>2019-02-14T15:56:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://lzhujian.github.io/</loc>
-    <lastmod>2019-02-14T15:56:04+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

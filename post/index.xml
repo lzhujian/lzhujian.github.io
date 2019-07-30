@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 空心菜的BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 14 Feb 2019 15:56:04 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 31 Jul 2019 00:01:24 +0800</lastBuildDate>
     
 	<atom:link href="https://lzhujian.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>fish&#43;tmux&#43;vim打造开发者终端</title>
+      <link>https://lzhujian.github.io/post/fish-tmux-vim-dev-console/</link>
+      <pubDate>Wed, 31 Jul 2019 00:01:24 +0800</pubDate>
+      
+      <guid>https://lzhujian.github.io/post/fish-tmux-vim-dev-console/</guid>
+      <description>本文主要介绍使用 fish + tmux + vim 打造开发者终端，通过本文教程和github里的配置，就能打造出一个易用高效的终端开发环境，虽然学习有一点坡度，但是</description>
+    </item>
     
     <item>
       <title>基于facenet实现人脸识别-2</title>
@@ -26,7 +35,7 @@
       <pubDate>Thu, 31 Jan 2019 14:41:16 +0800</pubDate>
       
       <guid>https://lzhujian.github.io/post/face-recognition-with-facenet/</guid>
-      <description>人脸识别是计算视觉和人工智能的一个热点领域，目前实现人脸识别的方法和框架有很多，比如face++, OpenFace, FaceNet等。本系列文章一共有两篇，</description>
+      <description>人脸识别是计算视觉和人工智能的一个热点领域，目前实现人脸识别的方法和框架有很多，比如face++, OpenFace, FaceNet等。本系列文章一共有三篇，</description>
     </item>
     
     <item>
