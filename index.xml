@@ -19,17 +19,28 @@
       
         <description>
 
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/about-me.png&#34; alt=&#34;about-me.png&#34; /&gt;
+我叫李龙，很高兴认识大家，偶尔没心没肺，所以昵称空心菜，个人博客也就是空心菜的Blog。&lt;/p&gt;
+
 &lt;h2 id=&#34;关于我&#34;&gt;关于我&lt;/h2&gt;
 
-&lt;p&gt;我叫李龙，是一名C++开发工程师，主要从事于音视频编解码和传输协议的开发，Python和Go打杂师。&lt;/p&gt;
+&lt;p&gt;我是一名开发工程师，主要工作语言是C++，主要从事于音视频编解码和传输协议的开发，做过客户端的开发，也开发过流媒体服务器。Windows, Mac, iOS, Android, Linux平台的相关开发都有接触，号称全能打杂师。&lt;/p&gt;
 
-&lt;p&gt;2012年计算机专业硕士毕业，曾经北漂，目前定居武汉。身上没有牛逼哄哄的Tags，希望能将技术之路走下去，努力工作，好好生活。&lt;/p&gt;
+&lt;p&gt;2012年武汉理工大学计算机专业本科和硕士毕业，曾经北漂，目前定居武汉。武汉的节奏可能没有背景那么快，也有些时间做做分享，希望能将技术之路走下去，努力工作，好好生活。&lt;/p&gt;
 
-&lt;p&gt;工作之余，爱好打打羽毛球，看看书，跑跑步，当然很多时候在带娃，哈哈 :)&lt;/p&gt;
+&lt;p&gt;工作之余，爱好打打羽毛球，看看书，跑跑步，游泳，也爱旅游，要带我家宝贝们多去看看这大好世界，哈哈 :)&lt;/p&gt;
+
+&lt;h2 id=&#34;工作经历&#34;&gt;工作经历&lt;/h2&gt;
+
+&lt;p&gt;2012.6 - 2015.7   搜狐视频&lt;/p&gt;
+
+&lt;p&gt;2015.8 - 2017.12  跟谁学&lt;/p&gt;
+
+&lt;p&gt;2019.3 - 至今      金山云&lt;/p&gt;
 
 &lt;h2 id=&#34;关于本站&#34;&gt;关于本站&lt;/h2&gt;
 
-&lt;p&gt;本站主要用于纪录工作中的一些心得，也包括一些读书和生活感悟。&lt;/p&gt;
+&lt;p&gt;本站主要用于纪录工作中的一些心得，分享自己的一些开发经验，也包括一些读书和生活感悟，希望和大家一起交流。&lt;/p&gt;
 
 &lt;p&gt;本站使用&lt;code&gt;Hugo&lt;/code&gt;生成静态页面，主题使用&lt;code&gt;hugo-theme-jane&lt;/code&gt;，发布于&lt;a href=&#34;https://github.com/lzhujian/lzhujian.github.io&#34;&gt;&lt;code&gt;github&lt;/code&gt;&lt;/a&gt;。&lt;/p&gt;
 
