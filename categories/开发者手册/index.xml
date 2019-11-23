@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 空心菜的BLOG</title>
-    <link>https://lzhujian.github.io/post/</link>
-    <description>Recent content in Posts on 空心菜的BLOG</description>
+    <title>开发者手册 on 空心菜的BLOG</title>
+    <link>https://lzhujian.github.io/categories/%E5%BC%80%E5%8F%91%E8%80%85%E6%89%8B%E5%86%8C/</link>
+    <description>Recent content in 开发者手册 on 空心菜的BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 23 Nov 2019 00:41:18 +0800</lastBuildDate>
     
-	<atom:link href="https://lzhujian.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://lzhujian.github.io/categories/%E5%BC%80%E5%8F%91%E8%80%85%E6%89%8B%E5%86%8C/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -36,33 +36,6 @@
       
       <guid>https://lzhujian.github.io/post/1.fish-tutorial/</guid>
       <description>本系列文章包括3篇，主要分享我在后端开发过程中使用终端的一些经验和心得，分享fish shell使用，使用tmux终端复用管理会话、窗口，以及</description>
-    </item>
-    
-    <item>
-      <title>基于facenet实现人脸识别-2</title>
-      <link>https://lzhujian.github.io/post/real-time-face-recognition/</link>
-      <pubDate>Thu, 14 Feb 2019 15:56:04 +0800</pubDate>
-      
-      <guid>https://lzhujian.github.io/post/real-time-face-recognition/</guid>
-      <description>上一篇文章中搭建了facenet人脸识别环境，并且运行compare.py比较两张人脸的欧氏距离，本文介绍实时人脸识别的方法。首先收集需要识</description>
-    </item>
-    
-    <item>
-      <title>基于facenet实现人脸识别-1</title>
-      <link>https://lzhujian.github.io/post/face-recognition-with-facenet/</link>
-      <pubDate>Thu, 31 Jan 2019 14:41:16 +0800</pubDate>
-      
-      <guid>https://lzhujian.github.io/post/face-recognition-with-facenet/</guid>
-      <description>人脸识别是计算视觉和人工智能的一个热点领域，目前实现人脸识别的方法和框架有很多，比如face++, OpenFace, FaceNet等。本系列文章一共有三篇，</description>
-    </item>
-    
-    <item>
-      <title>欢迎</title>
-      <link>https://lzhujian.github.io/post/welcome/</link>
-      <pubDate>Wed, 30 Jan 2019 00:24:09 +0800</pubDate>
-      
-      <guid>https://lzhujian.github.io/post/welcome/</guid>
-      <description>欢迎来到空心菜的BLOG。</description>
     </item>
     
   </channel>

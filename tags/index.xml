@@ -6,10 +6,37 @@
     <description>Recent content in Tags on 空心菜的BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 14 Feb 2019 15:56:04 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 23 Nov 2019 00:41:18 +0800</lastBuildDate>
     
 	<atom:link href="https://lzhujian.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>vim</title>
+      <link>https://lzhujian.github.io/tags/vim/</link>
+      <pubDate>Sat, 23 Nov 2019 00:41:18 +0800</pubDate>
+      
+      <guid>https://lzhujian.github.io/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tmux</title>
+      <link>https://lzhujian.github.io/tags/tmux/</link>
+      <pubDate>Sat, 23 Nov 2019 00:08:07 +0800</pubDate>
+      
+      <guid>https://lzhujian.github.io/tags/tmux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fish</title>
+      <link>https://lzhujian.github.io/tags/fish/</link>
+      <pubDate>Wed, 31 Jul 2019 00:01:24 +0800</pubDate>
+      
+      <guid>https://lzhujian.github.io/tags/fish/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>facenet</title>

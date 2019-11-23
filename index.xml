@@ -5,7 +5,7 @@
     <description>Recent content on 空心菜的BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 31 Jul 2019 00:01:24 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 23 Nov 2019 00:41:18 +0800</lastBuildDate>
     
         <atom:link href="https://lzhujian.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -43,254 +43,213 @@
     </item>
     
     <item>
-      <title>fish&#43;tmux&#43;vim打造开发者终端</title>
-      <link>https://lzhujian.github.io/post/fish-tmux-vim-dev-console/</link>
-      <pubDate>Wed, 31 Jul 2019 00:01:24 +0800</pubDate>
+      <title>打造最强终端之三：vim插件使用教程</title>
+      <link>https://lzhujian.github.io/post/3.vim-tutorial/</link>
+      <pubDate>Sat, 23 Nov 2019 00:41:18 +0800</pubDate>
       
-      <guid>https://lzhujian.github.io/post/fish-tmux-vim-dev-console/</guid>
+      <guid>https://lzhujian.github.io/post/3.vim-tutorial/</guid>
       
         <description>
 
-&lt;p&gt;本文主要介绍使用 fish + tmux + vim 打造开发者终端，通过本文教程和&lt;a href=&#34;https://github.com/lzhujian/tmux-vim-conf.git&#34;&gt;github&lt;/a&gt;里的配置，就能打造出一个易用高效的终端开发环境，虽然学习有一点坡度，但是掌握之后，能大大的提高效率。最终的终端效果图如下图：&lt;/p&gt;
+&lt;p&gt;本系列文章包括3篇，主要分享我在后端开发过程中使用终端的一些经验和心得，分享fish shell使用，使用tmux终端复用管理会话、窗口，以及vim插件使用，让vim变成强大的IDE。通过阅读本系列文章，你也可以打造一个高效易用的终端，能很大的提高工作的效率，让手指飞起来，让命令行飞起来。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/cool-dev-console.png&#34; alt=&#34;dev-console&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;本系列的3片文章包括：&lt;/p&gt;
 
-&lt;h1 id=&#34;1-fish&#34;&gt;1. Fish&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/1.fish-tutorial/&#34;&gt;打造最强终端之一：Fish shell简明教程&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Fish是“the &lt;strong&gt;f&lt;/strong&gt;riendly &lt;strong&gt;i&lt;/strong&gt;nteractive &lt;strong&gt;sh&lt;/strong&gt;ell”的简称，fish最大的特点就是功能强大，智能并且用户友好。Fish支持语法高亮，自动建议，标签完成等，而且配置十分简单。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/2.tmux-tutorial/&#34;&gt;打造最强终端之二：Tmux简明教程&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;1-1-安装&#34;&gt;1.1 安装&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/3.vim-tutorial/&#34;&gt;打造最强终端之三：vim插件使用教程&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Ubuntu和Debian的安装方法：&lt;/p&gt;
+&lt;p&gt;本系列文章使用的fish配置文件，tmux配置文件和vim插件都上传到了github, &lt;a href=&#34;https://github.com/lzhujian/tmux-vim-conf.git&#34;&gt;tmux-vim-conf&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;本文为第三篇，vim插件使用教程。&lt;/p&gt;
+
+&lt;h1 id=&#34;exvim&#34;&gt;exVim&lt;/h1&gt;
+
+&lt;p&gt;exVim将vim打造成一个友好编程环境的项目，exVim引入vim中(.exvim)项目文件的概念。通过Vim编辑此项目文件（.exvim），将调用exVim插件。这样，您可以应用不同的Vim设置，插件设置，甚至可以根据不同项目的需要加载插件。通常，它使Vim成为世界上最好的IDE！&lt;/p&gt;
+
+&lt;h2 id=&#34;入门&#34;&gt;入门&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt-get install fish -y&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;vim udp.exvim&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;Mac下安装方式：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;brew install fish&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h2 id=&#34;1-2-配置&#34;&gt;1.2 配置&lt;/h2&gt;
+&lt;p&gt;生成的.exvim工程，窗口左边为 project window，右边为 edit window，edit window可以配置目录过滤规则(folder_filter_mode)，过滤目录(folder_filter)，过滤文件(file_filter)等，在project window执行&amp;lt;leader&amp;gt;R命令生成目录树&lt;strong&gt;(&amp;lt;leader&amp;gt;R指的是按下&amp;rsquo;\&amp;lsquo;，紧接着按下&amp;rsquo;R&amp;rsquo;，vim操作都是大小写敏感)&lt;/strong&gt;，然后执行 &lt;code&gt;:Up&lt;/code&gt;更新工程。&lt;/p&gt;
 
-&lt;p&gt;修改fish为默认终端&lt;/p&gt;
+&lt;p&gt;生成的工程结构如下图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191118142838343.png&#34; alt=&#34;image-20191118142838343&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;本节涉及的使用命令有&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-note&#34; data-lang=&#34;note&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;chsh -s /usr/bin/fish
-fish&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-note&#34; data-lang=&#34;note&#34;&gt;&amp;lt;leader&amp;gt;R   生成左边project windows所示的工程
+&amp;lt;leader&amp;gt;r 刷新工程目录
+:Up Update工程，exvim将使用ctag，id-utils，cscope等插件解析工程，这样就能在工程中实现查找、函数跳转等功能&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;fish的配置文件为&lt;code&gt;~/.config/fish/config.fish&lt;/code&gt;，fish每次启动会自动加载改文件。你也可以使用&lt;/p&gt;
+&lt;h2 id=&#34;工程窗口&#34;&gt;工程窗口&lt;/h2&gt;
+
+&lt;p&gt;光标的移动与vim相同，使用 &lt;code&gt;h j k l&lt;/code&gt; 分别对应光标的 &lt;code&gt;左移 上移 下移 右移&lt;/code&gt; ，同时exvim提供 &lt;code&gt;ctrl-j&lt;/code&gt; 和 &lt;code&gt;ctrl-k&lt;/code&gt;用于文件夹之间的光标移动&lt;/p&gt;
+
+&lt;p&gt;将光标移动到文件上，按下&lt;code&gt;enter&lt;/code&gt;将打开文件&lt;/p&gt;
+
+&lt;p&gt;将光标移动到文件夹上，安装&lt;code&gt;enter&lt;/code&gt;将折叠/展开目录，同时exvim也提供了 &lt;code&gt;zo&lt;/code&gt; 和 &lt;code&gt;zc&lt;/code&gt; 分别用于目录的折叠和展开&lt;/p&gt;
+
+&lt;p&gt;在目录下使用&lt;code&gt;o&lt;/code&gt;新建一行，输入文件名，&lt;code&gt;enter&lt;/code&gt;编辑文件后&lt;code&gt;:w&lt;/code&gt;保存，将新建一个文件&lt;/p&gt;
+
+&lt;p&gt;将光标移动到目录上，按下&lt;code&gt;O&lt;/code&gt;，将在该目录下新建一个文件夹，exvim提示你输入文件夹名&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tips:&lt;/strong&gt; 想快速定位到当前正在编辑的文件，按下 &lt;code&gt;&amp;lt;leader&amp;gt;fc&lt;/code&gt; 将会回到project window并将光标定位到正在编辑的文件，如果不小心关闭了project window这招也很实用。&lt;/p&gt;
+
+&lt;h2 id=&#34;搜索&#34;&gt;搜索&lt;/h2&gt;
+
+&lt;p&gt;vim使用 /&lt;word&gt; 搜索文本，如果是搜索一个单词，exvim提供一种更加快捷方便的方式，将光标置于要搜索的单词上，按下 &lt;code&gt;gd&lt;/code&gt; 即可搜索改单词。&lt;/p&gt;
+
+&lt;p&gt;同时exvim提供全局搜索，使用ex-gsearch进行文本搜索，支持两种方式：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;leader&amp;gt;gg&lt;/code&gt;：搜索光标下的单词&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:GS &amp;lt;word&amp;gt;&lt;/code&gt;：搜索&lt;word&gt;和包含&lt;word&gt;的文本&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:GSW &amp;lt;word&amp;gt;&lt;/code&gt;：搜索完整的&lt;word&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;搜索完成后将在&lt;code&gt;全局搜索窗口&lt;/code&gt;显示搜索结果，如下图所示&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191118164436055.png&#34; alt=&#34;image-20191118164436055&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;过滤搜索结果&#34;&gt;过滤搜索结果&lt;/h2&gt;
+
+&lt;p&gt;上图是我们全局搜索session的结果，包含session, Seesion, new_session等包含session文本的结果，那如何对搜索结果进行进一步过滤呢，比如过滤出Session的结果。具体操作：在搜索结果窗口搜索 &lt;code&gt;/\&amp;lt;Session\&amp;gt;&lt;/code&gt;，该命令表示搜索完整的Session单词，然后按下&lt;code&gt;&amp;lt;leader&amp;gt;r&lt;/code&gt;对搜索结果进行过滤，这样，搜索窗口就只包含匹配&lt;Session&gt;单词的结果了，如下图所示&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191118164614961.png&#34; alt=&#34;image-20191118164614961&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;问题:&lt;/strong&gt; 当我们使用 :GS 搜索文本 tcp::socket时，发现没有输出结果，而我们确定代码中肯定包含 tcp::socket 文本，这是因为ex-gsearch仅支持 &lt;word&gt;，所以包含&lt;code&gt;: , 空格&lt;/code&gt; 的关键字无法搜索到。解决办法就只能分两步：首先搜索一个单词，然后在搜索结果窗口中过滤搜索结果，将完整的 搜索词 过滤出来&lt;/p&gt;
+
+&lt;h2 id=&#34;符号列表&#34;&gt;符号列表&lt;/h2&gt;
+
+&lt;p&gt;前面我们使用&lt;code&gt;:Up&lt;/code&gt;命令，exvim使用ctag, id-utils等插件生成标签符号，ex-symbols提供几种方法在符号窗口列出符号&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;fish_config&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;使用fish提供的web配置界面来配置fish。&lt;/p&gt;
-
-&lt;h2 id=&#34;1-3-使用&#34;&gt;1.3 使用&lt;/h2&gt;
-
-&lt;p&gt;fish支持&lt;strong&gt;语法高亮&lt;/strong&gt;，非法的命令显示默认的红色，命令有效后变成另外颜色。有效的路径用下划线标识&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-note&#34; data-lang=&#34;note&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 非法的命令行&lt;/span&gt;
-mkd
-&lt;span class=&#34;c1&#34;&gt;# 有效的命令&lt;/span&gt;
-mkdir
-&lt;span class=&#34;c1&#34;&gt;# 有效路径下有下划线&lt;/span&gt;
-&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; &amp;lt;u&amp;gt;~/Downloads/test/&amp;lt;/u&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-note&#34; data-lang=&#34;note&#34;&gt;&amp;lt;leader&amp;gt;ss 列出所有符号
+&amp;lt;leader&amp;gt;sg 列出光标下单词的符号
+&amp;lt;leader&amp;gt;sq 打开符号窗口，显示为最后一次的symbols列表
+:SL &amp;lt;your-tag&amp;gt; 使用&amp;lt;your-tag&amp;gt;作为搜索tag，列出所有匹配项&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;fish支持&lt;strong&gt;自动补全&lt;/strong&gt;，输入命令时，在光标右侧显示建议(灰色)，使用&lt;code&gt;ctrl+f&lt;/code&gt;或者&lt;code&gt;→(键盘右键)&lt;/code&gt;接受建议，&lt;code&gt;alt+→&lt;/code&gt;接受部分建议&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;sudo apt &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;i&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;font&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;color&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;gray&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;nstall fish -y&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;font&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h2 id=&#34;1-4-oh-my-fish&#34;&gt;1.4 Oh-my-fish&lt;/h2&gt;
+&lt;p&gt;下图为光标在UDPTransport下， &lt;leader&gt;sg 展示的 symbols窗口&lt;/p&gt;
 
-&lt;p&gt;oh-my-fish是Fish的主题和插件管理工具(类似oh-my-zsh)，安装非常简单&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Installation&lt;/span&gt;
-curl -L https://get.oh-my.fish &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; fish&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;安装完成后，使用&lt;code&gt;omf&lt;/code&gt;命令安装theme或plugin&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191118170453627.png&#34; alt=&#34;image-20191118170453627&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;其他插件&#34;&gt;其他插件&lt;/h1&gt;
+
+&lt;h2 id=&#34;ctrlp&#34;&gt;ctrlp&lt;/h2&gt;
+
+&lt;p&gt;ctrlp用于快速打开文件，按下&lt;code&gt;ctrl-p&lt;/code&gt;，然后输入要匹配的文件名，&lt;code&gt;ctrl-j ctrl-k&lt;/code&gt;上下移动光标，选择要打开的文件&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191118172121262.png&#34; alt=&#34;image-20191118172121262&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;tabbar&#34;&gt;TabBar&lt;/h2&gt;
+
+&lt;p&gt;TabBar插件使vim打开的文件在顶部以tab的形式展示，如下图所示&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191118172332182.png&#34; alt=&#34;image-20191118172332182&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我修改了一些快捷方式：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;omf --help &lt;span class=&#34;c1&#34;&gt;# 获取 help 信息&lt;/span&gt;
-omf theme  &lt;span class=&#34;c1&#34;&gt;# 列出可用的主题&lt;/span&gt;
-omf list &lt;span class=&#34;c1&#34;&gt;# 列出已安装的theme和plugin&lt;/span&gt;
-omf install kawasaki &lt;span class=&#34;c1&#34;&gt;# 安装 kawasaki theme&lt;/span&gt;
-omf install https://github.com/jhillyerd/plugin-git &lt;span class=&#34;c1&#34;&gt;# 安装git plugin&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;ctrl-h  上一个tab
+ctrl-l  下一个tab
+ctrl-x  关闭tab&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2 id=&#34;1-5-参考&#34;&gt;1.5 参考&lt;/h2&gt;
+&lt;h2 id=&#34;a-vim&#34;&gt;a.vim&lt;/h2&gt;
 
-&lt;p&gt;fish的使用可以参考：&lt;/p&gt;
+&lt;p&gt;a.vim主要用于头文件和源文件之间的快速跳转，比如正在编辑tcp.h，按下 &lt;code&gt;:A&lt;/code&gt; 即可快速打开 tcp.cpp&lt;/p&gt;
 
-&lt;p&gt;Fish官方的 &lt;a href=&#34;https://fishshell.com/docs/current/tutorial.html&#34;&gt;Fish tutorial&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191118172829173.png&#34; alt=&#34;image-20191118172829173&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;阮一峰的教程 &lt;a href=&#34;http://www.ruanyifeng.com/blog/2017/05/fish_shell.html&#34;&gt;Fish shell入门教程&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;nerdtree&#34;&gt;NERDTree&lt;/h2&gt;
 
-&lt;p&gt;oh-my-fish &lt;a href=&#34;https://github.com/oh-my-fish/oh-my-fish&#34;&gt;oh-my-fish&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;NERDTree用于文件浏览，在展示当前目录下的所有文件，快捷方式我设置的为 &lt;code&gt;ctrl-n&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;fish git plugin &lt;a href=&#34;https://github.com/jhillyerd/plugin-git&#34;&gt;plugin-git&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191118173210971.png&#34; alt=&#34;image-20191118173210971&#34; /&gt;&lt;/p&gt;
 
-&lt;h1 id=&#34;2-tmux&#34;&gt;2. tmux&lt;/h1&gt;
+&lt;h1 id=&#34;总结&#34;&gt;总结&lt;/h1&gt;
 
-&lt;p&gt;tmux是一个非常优秀的终端复用软件，和GNU Screen类似。它可以在一个终端的多个程序之间自由的切换，保证终端关闭或者非正常掉线，任务也会继续运行，并且还能回到原来的工作环境。简单的说，tmux主要提供2大功能：&lt;/p&gt;
+&lt;p&gt;上面列出的插件是我使用vim过程中使用最频繁的，掌握了大大的提高开发效率，当然还有些其他的插件，如indentLine, undotree等，读者可以根据实际使用中慢慢掌握，vim学习难度比较高，但是掌握后，开发效率能很大的提升。&lt;/p&gt;
+
+&lt;h1 id=&#34;参考&#34;&gt;参考&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://exvim.github.io/&#34;&gt;exvim&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>打造最强终端之二：Tmux简明教程</title>
+      <link>https://lzhujian.github.io/post/2.tmux-tutorial/</link>
+      <pubDate>Sat, 23 Nov 2019 00:08:07 +0800</pubDate>
+      
+      <guid>https://lzhujian.github.io/post/2.tmux-tutorial/</guid>
+      
+        <description>
+
+&lt;p&gt;本系列文章包括3篇，主要分享我在后端开发过程中使用终端的一些经验和心得，分享fish shell使用，使用tmux终端复用管理会话、窗口，以及vim插件使用，让vim变成强大的IDE。通过阅读本系列文章，你也可以打造一个高效易用的终端，能很大的提高工作的效率，让手指飞起来，让命令行飞起来。&lt;/p&gt;
+
+&lt;p&gt;本系列的3片文章包括：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/1.fish-tutorial/&#34;&gt;打造最强终端之一：Fish shell简明教程&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/2.tmux-tutorial/&#34;&gt;打造最强终端之二：Tmux简明教程&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/3.vim-tutorial/&#34;&gt;打造最强终端之三：vim插件使用教程&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;本系列文章使用的fish配置文件，tmux配置文件和vim插件都上传到了github, &lt;a href=&#34;https://github.com/lzhujian/tmux-vim-conf.git&#34;&gt;tmux-vim-conf&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;本文为第二篇，Tmux简明教程。&lt;/p&gt;
+
+&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;
+
+&lt;p&gt;命令行的典型使用方式是，打开一个终端窗口（terminal window），在里面输入命令。用户与计算机的这种交互，称为一次“会话“（session）。&lt;/p&gt;
+
+&lt;p&gt;会话的一个重要特点是，窗口与其启动的进程是连在一起的。打开窗口，会话开始；关闭窗口，会话结束。这样会话中的进程也会随之关闭，不管有没有运行完。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;tmux&lt;/strong&gt;就是将会话与窗口”解绑“的工具。&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;窗口管理和split窗口。tmux启动时创建一个新的&lt;u&gt;session&lt;/u&gt;，session初始包含一个&lt;u&gt;window&lt;/u&gt;，可以在一个session中创建多个window，也可以将window split为多个&lt;u&gt;pane&lt;/u&gt;。&lt;/li&gt;
-&lt;li&gt;session管理。tmux可以从screen detach分离，并在后台运行，也可以attach到screen。&lt;/li&gt;
+&lt;li&gt;它允许在单个窗口中，同时访问多个会话。这对于同时运行多个命令行程序很有用。&lt;/li&gt;
+&lt;li&gt;它可以让新窗口&amp;rdquo;接入&amp;rdquo;已经存在的会话。&lt;/li&gt;
+&lt;li&gt;它允许每个会话有多个连接窗口，因此可以多人实时共享会话。&lt;/li&gt;
+&lt;li&gt;它还支持窗口任意的垂直和水平拆分。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&#34;2-1-安装&#34;&gt;2.1 安装&lt;/h2&gt;
+&lt;h1 id=&#34;配置&#34;&gt;配置&lt;/h1&gt;
 
-&lt;p&gt;Ubuntu和Debian的安装方式：&lt;/p&gt;
+&lt;p&gt;tmux配置文件为 &lt;code&gt;~/.tmux.conf&lt;/code&gt;，我自定义了tmux的快捷键和状态栏，配置项我都写了注释，读者可以根据自己的喜好修改自定义 :)&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt install tmux -y&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Mac下的安装方式：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;brew install tmux&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h2 id=&#34;2-2-配置&#34;&gt;2.2 配置&lt;/h2&gt;
-
-&lt;p&gt;tmux的所有的配置参考我的GitHub&lt;a href=&#34;https://github.com/lzhujian/tmux-vim-conf.git&#34;&gt;tmux-vim-conf&lt;/a&gt;，因为linux(ubuntu和debian)与mac使用的tmux版本差异较大，有些配置项修改了，所以&lt;code&gt;tmux.conf.linux&lt;/code&gt;和&lt;code&gt;tmux.conf.mac&lt;/code&gt;分别用于linux和mac的tmux配置&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 将对应的配置copy到~/.tmux.conf即可&lt;/span&gt;
-cp tmux.conf.mac ~/.tmux.conf&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;下面详细说下常用的几个配置项&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Set Ctrl-b key bindings&lt;/span&gt;
-unbind C-b
-&lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; -g prefix &lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;tmux默认的前缀组合键是&lt;code&gt;ctrl+b&lt;/code&gt;，我修改为了 `，当然也可以修改为其他键，只是我觉得这样比较快捷&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# split window&lt;/span&gt;
-unbind &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt;
-&lt;span class=&#34;nb&#34;&gt;bind&lt;/span&gt; - splitw -v
-unbind %
-&lt;span class=&#34;nb&#34;&gt;bind&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\ &lt;/span&gt;splitw -h&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;split window快捷键，这样使用 `&lt;code&gt;+-&lt;/code&gt;将窗口水平切分为两个pane&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#up&lt;/span&gt;
-bind-key k &lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;-pane -U
-&lt;span class=&#34;c1&#34;&gt;#down&lt;/span&gt;
-bind-key j &lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;-pane -D
-&lt;span class=&#34;c1&#34;&gt;#left&lt;/span&gt;
-bind-key h &lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;-pane -L
-&lt;span class=&#34;c1&#34;&gt;#right&lt;/span&gt;
-bind-key l &lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;-pane -R&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;select pane，window切分为多个pane，使用 &lt;code&gt;prefix+k/j/h/l&lt;/code&gt;键在各个pane之间来回切换，与vim快捷键相同&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# resize pane&lt;/span&gt;
-&lt;span class=&#34;nb&#34;&gt;bind&lt;/span&gt; -r ^k resizep -U &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# upward (prefix Ctrl+k)&lt;/span&gt;
-&lt;span class=&#34;nb&#34;&gt;bind&lt;/span&gt; -r ^j resizep -D &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# downward (prefix Ctrl+j)&lt;/span&gt;
-&lt;span class=&#34;nb&#34;&gt;bind&lt;/span&gt; -r ^h resizep -L &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# to the left (prefix Ctrl+h)&lt;/span&gt;
-&lt;span class=&#34;nb&#34;&gt;bind&lt;/span&gt; -r ^l resizep -R &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# to the right (prefix Ctrl+l)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;resize pane，使用 &lt;code&gt;prefix + ctrl + k/j/h/l&lt;/code&gt;分别将pane进行上/下/左/右的大小调整&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
@@ -323,46 +282,219 @@ bind-key l &lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;-pane -R&lt;/code&gt
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;44
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;45
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;46
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;47
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;48
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;49
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;50
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;51
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;52
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;53
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;54
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;55
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;56
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;57
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;58
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;59
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;60
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;61
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;62
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;63
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;64
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;65
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;66
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;67
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;68
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;69
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;70
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;71
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;72
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;73
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;74
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;75
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;76
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;77
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;78
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;79
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;80
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;81
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;82
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;83
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;84
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;85
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;86
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;87
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Status bar settings&lt;/span&gt;
-&lt;span class=&#34;c1&#34;&gt;# alignment&lt;/span&gt;
+&lt;pre class=&#34;chroma&#34;&gt;# tmux默认快捷键的前缀是 ctrl-b, 我修改成了 ` (数字键1左边的那个键)
+# Set Ctrl-b key bindings
+unbind C-b
+set -g prefix `
+
+# 窗口索引从1开始，`-1 即切换到第一个窗口
+# Count sessions start at 1
+set -g base-index 1
+
+# vi模式，v开始选择，y 复制选择内容到剪贴板
+# Use vim bindings
+setw -g mode-keys vi
+# start selecting text typing &amp;#39;v&amp;#39; key (once you are in copy mode)
+bind-key -T copy-mode-vi &amp;#39;v&amp;#39; send -X begin-selection
+# # copy selected text to the system&amp;#39;s clipboard
+bind-key -T copy-mode-vi &amp;#39;y&amp;#39; send -X copy-pipe-and-cancel pbcopy
+
+#up
+bind-key k select-pane -U
+#down
+bind-key j select-pane -D
+#left
+bind-key h select-pane -L
+#right
+bind-key l select-pane -R
+
+# 切分窗口，快捷键修改为 - 水平切分窗口， \ 垂直切分窗口
+# split window
+unbind &amp;#39;&amp;#34;&amp;#39;
+bind - splitw -v
+unbind %
+bind \ splitw -h
+
+# ctrl + k/j/h/l 调整pane大小
+# resize pane
+bind -r ^k resizep -U 10 # upward (prefix Ctrl+k)
+bind -r ^j resizep -D 10 # downward (prefix Ctrl+j)
+bind -r ^h resizep -L 10 # to the left (prefix Ctrl+h)
+bind -r ^l resizep -R 10 # to the right (prefix Ctrl+l)
+
+# Status bar settings
+# alignment
 set-option -g status-justify centre
 
-&lt;span class=&#34;c1&#34;&gt;# left-bottom corner&lt;/span&gt;
-set-option -g status-left &lt;span class=&#34;s1&#34;&gt;&amp;#39;#[bg=black,fg=green][#[fg=cyan]#S#[fg=green]]&amp;#39;&lt;/span&gt;
-set-option -g status-left-length &lt;span class=&#34;m&#34;&gt;20&lt;/span&gt;
+# left-bottom corner
+set-option -g status-left &amp;#39;#[bg=black,fg=green][#[fg=cyan]#S#[fg=green]]&amp;#39;
+set-option -g status-left-length 20
 
-&lt;span class=&#34;c1&#34;&gt;# window list&lt;/span&gt;
-setw -g automatic-rename on
-set-window-option -g window-status-format &lt;span class=&#34;s1&#34;&gt;&amp;#39;#[dim]#I:#[default]#W#[fg=grey,dim]&amp;#39;&lt;/span&gt;
-set-window-option -g window-status-current-format &lt;span class=&#34;s1&#34;&gt;&amp;#39;#[fg=cyan,bold]#I#[fg=blue]:#[fg=cyan]#W#[fg=dim]&amp;#39;&lt;/span&gt;
+# window list
+set-window-option -g window-status-format &amp;#39;#[dim]#I:#[default]#W#[fg=grey,dim]&amp;#39;
+set-window-option -g window-status-current-format &amp;#39;#[fg=cyan,bold]#I#[fg=blue]:#[fg=cyan]#W#[fg=dim]&amp;#39;
 
-&lt;span class=&#34;c1&#34;&gt;# right-bottom status&lt;/span&gt;
-&lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; -g status-right &lt;span class=&#34;s1&#34;&gt;&amp;#39;#[fg=green][#[fg=cyan]%Y-%m-%d#[fg=green]]&amp;#39;&lt;/span&gt;
+# right-bottom status
+set -g status-right &amp;#39;#[fg=green][#[fg=cyan]%Y-%m-%d#[fg=green]]&amp;#39;
 
-&lt;span class=&#34;c1&#34;&gt;# center window status&lt;/span&gt;
-&lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; -g window-status-format &lt;span class=&#34;s2&#34;&gt;&amp;#34;#I:#W&amp;#34;&lt;/span&gt;
-&lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; -g window-status-current-format &lt;span class=&#34;s2&#34;&gt;&amp;#34;#I:#W*&amp;#34;&lt;/span&gt;
+# center window status
+set -g window-status-format &amp;#34;#I:#W&amp;#34;
+set -g window-status-current-format &amp;#34;#I:#W&amp;#34;
 
-&lt;span class=&#34;c1&#34;&gt;# default statusbar colors&lt;/span&gt;
-&lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; -g status-fg white
-&lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; -g status-bg black
+# default statusbar colors
+set -g status-fg white
+set -g status-bg black
 
-&lt;span class=&#34;c1&#34;&gt;# default window title colors&lt;/span&gt;
-set-window-option -g window-status-fg white
-set-window-option -g window-status-bg default
-set-window-option -g window-status-attr dim
+# default window title colors
+set-window-option -g window-status-style fg=white
+set-window-option -g window-status-style bg=default
+set-window-option -g window-status-style dim
 
-&lt;span class=&#34;c1&#34;&gt;# active window title colors&lt;/span&gt;
-set-window-option -g window-status-current-fg red
-set-window-option -g window-status-current-bg default
-set-window-option -g window-status-current-attr bold&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+# active window title colors
+set-window-option -ag window-status-current-style fg=red
+set-window-option -ag window-status-current-style bg=default
+set-window-option -ag window-status-current-style bold
+
+# command/message line colors
+set -g message-style fg=white
+set -g message-style bg=black
+set -g message-style bright
+
+set -g status-keys vi
+bind-key -T vi-edit Up send -X history-up
+bind-key -T vi-edit Down send -X history-down
+
+set -g status-interval 1
+set -g status-justify centre # center align window list
+
+# window-name
+set-option -g allow-rename off&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;设置底部的status bar，左下角显示 &lt;code&gt;[session]&lt;/code&gt;，配色为cyan和green。中间显示窗口&lt;code&gt;index:window&lt;/code&gt;，当前的窗口cyan并且窗口名称上有个&lt;code&gt;*&lt;/code&gt;号，其他窗口title为grey。左下角显示日期&lt;code&gt;%Y-%m-%d&lt;/code&gt;，配色为cyan,blue。&lt;/p&gt;
+&lt;h1 id=&#34;使用&#34;&gt;使用&lt;/h1&gt;
 
-&lt;p&gt;这里再介绍一些常用的快捷键&lt;/p&gt;
+&lt;p&gt;下面操作的快捷键 &lt;prefix&gt;指的是快捷键的前缀，默认是&lt;code&gt;ctrl-b&lt;/code&gt;，我配置文件修改为了 `(键盘数字1左边的键)&lt;/p&gt;
+
+&lt;h2 id=&#34;基本操作&#34;&gt;基本操作&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;tmux ls  &lt;span class=&#34;c1&#34;&gt;# 查询所有会话&lt;/span&gt;
+tmux new -s session_name    &lt;span class=&#34;c1&#34;&gt;# 创建会话&lt;/span&gt;
+tmux detach &lt;span class=&#34;c1&#34;&gt;# 断开会话，或者使用快捷键 &amp;lt;prefix&amp;gt;-d&lt;/span&gt;
+tmux attach &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;-t session_name&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;# 重新连接会话，-t session_name 指定连接的会话名称&lt;/span&gt;
+tmux kill-session -t session_name   &lt;span class=&#34;c1&#34;&gt;# 关闭会话，会话关闭后，会话中所有的程序也会关闭&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;会话-session-管理&#34;&gt;会话(session)管理&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;s   &lt;span class=&#34;c1&#34;&gt;# 列出所有会话&lt;/span&gt;
+$   &lt;span class=&#34;c1&#34;&gt;# 重命名会话&lt;/span&gt;
+d   &lt;span class=&#34;c1&#34;&gt;# 断开会话&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;下图展示&lt;code&gt;&amp;lt;prefix&amp;gt;-s&lt;/code&gt;列出所有session的结果，我们只窗口了一个blog会话，选择session时，也会展示该session中各窗口的缩略图。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191123002755193.png&#34; alt=&#34;image-20191123002755193&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;窗口-window-管理&#34;&gt;窗口(window)管理&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;c &lt;span class=&#34;c1&#34;&gt;# 新建窗口&lt;/span&gt;
+, &lt;span class=&#34;c1&#34;&gt;# 重命名窗口&lt;/span&gt;
+w   &lt;span class=&#34;c1&#34;&gt;# 列出所有窗口&lt;/span&gt;
+n &lt;span class=&#34;c1&#34;&gt;# 选择下一个窗口&lt;/span&gt;
+p &lt;span class=&#34;c1&#34;&gt;# 选择上一个窗口&lt;/span&gt;
+&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;-9 &lt;span class=&#34;c1&#34;&gt;# 选择对应编号的窗口&lt;/span&gt;
+
+- &lt;span class=&#34;c1&#34;&gt;# 水平分割窗口，默认键为 %&lt;/span&gt;
+&lt;span class=&#34;se&#34;&gt;\ &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# 垂直分割窗口，默认键为 &amp;#34;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;下图展示&lt;code&gt;&amp;lt;prefix&amp;gt;-w&lt;/code&gt;列出所有窗口的结果，可以看到blog会话包含了hugo, post, udp 3个窗口，选择某个窗口时也展示了该窗口包含的pane。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191123002526507.png&#34; alt=&#34;image-20191123002526507&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;窗格-pane-管理&#34;&gt;窗格(pane)管理&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -375,45 +507,175 @@ set-window-option -g window-status-current-attr bold&lt;/code&gt;&lt;/pre&gt;&lt
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# prefix表示快捷键前缀，我的配置里prefix为`，默认为 ctrl-b&lt;/span&gt;
-prefix - , &lt;span class=&#34;c1&#34;&gt;#重命名窗口&lt;/span&gt;
-prefix - c &lt;span class=&#34;c1&#34;&gt;#创建新窗口&lt;/span&gt;
-prefix - n &lt;span class=&#34;c1&#34;&gt;#选择下一个窗口&lt;/span&gt;
-prefix - p &lt;span class=&#34;c1&#34;&gt;#选择上一个窗口&lt;/span&gt;
-prefix - &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;-9 &lt;span class=&#34;c1&#34;&gt;#根据编好选择窗口 (我的配置把窗口编号从1开始)&lt;/span&gt;
-prefix - &lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;#关闭窗口&lt;/span&gt;
-prefix - w &lt;span class=&#34;c1&#34;&gt;#通过菜单选择窗口，菜单列出所有session的窗口&lt;/span&gt;
-prefix - s &lt;span class=&#34;c1&#34;&gt;#通过菜单选择session&lt;/span&gt;
-prefix - d &lt;span class=&#34;c1&#34;&gt;#detach tmux, 回话会保存，后续通过 tmux attach可以回到session&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;q &lt;span class=&#34;c1&#34;&gt;# 显示窗格的编号&lt;/span&gt;
+o &lt;span class=&#34;c1&#34;&gt;# 在窗格间切换&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# 与下一个窗格交换位置&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# 与上一个窗格交换位置&lt;/span&gt;
+x &lt;span class=&#34;c1&#34;&gt;# 关闭当前窗格&lt;/span&gt;
+
+- &lt;span class=&#34;c1&#34;&gt;# 创建一个水平窗格，默认键为 %&lt;/span&gt;
+&lt;span class=&#34;se&#34;&gt;\ &lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 创建一个竖直窗格，默认键为 &amp;#34;&lt;/span&gt;
+j &lt;span class=&#34;c1&#34;&gt;# 选择下一个窗格&lt;/span&gt;
+k &lt;span class=&#34;c1&#34;&gt;# 选择上一个窗格&lt;/span&gt;
+h &lt;span class=&#34;c1&#34;&gt;# 选择左一个窗格&lt;/span&gt;
+l &lt;span class=&#34;c1&#34;&gt;# 选择右一个窗格&lt;/span&gt;
+ctrl-j  &lt;span class=&#34;c1&#34;&gt;# 向下resize窗格&lt;/span&gt;
+ctrl-k  &lt;span class=&#34;c1&#34;&gt;# 向上resize窗格&lt;/span&gt;
+ctrl-h  &lt;span class=&#34;c1&#34;&gt;# 向左resize窗格&lt;/span&gt;
+ctrl-l  &lt;span class=&#34;c1&#34;&gt;# 向右resize窗格&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;h1 id=&#34;3-vim&#34;&gt;3. vim&lt;/h1&gt;
+&lt;p&gt;下图展示&lt;code&gt;&amp;lt;prefix&amp;gt;-q&lt;/code&gt;显示pane的编号，可以看到窗口3(udp)包含了 0 1 2 三个pane，&lt;/p&gt;
 
-&lt;h2 id=&#34;3-1-安装&#34;&gt;3.1 安装&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/tmux-pane-shot.png&#34; alt=&#34;tmux-pane-shot&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Ubuntu和Debian安装方式：&lt;/p&gt;
+&lt;h2 id=&#34;其他命令&#34;&gt;其他命令&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 列出所有快捷键，及其对应的 Tmux 命令&lt;/span&gt;
+tmux list-keys
+
+&lt;span class=&#34;c1&#34;&gt;# 列出所有 Tmux 命令及其参数&lt;/span&gt;
+tmux list-commands
+
+&lt;span class=&#34;c1&#34;&gt;# 列出当前所有 Tmux 会话的信息&lt;/span&gt;
+tmux info
+
+&lt;span class=&#34;c1&#34;&gt;# 重新加载当前的 Tmux 配置&lt;/span&gt;
+tmux source-file ~/.tmux.conf&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;总结&#34;&gt;总结&lt;/h1&gt;
+
+&lt;p&gt;tmux终端复用的好处不仅在于将窗口与会话&amp;rdquo;解绑&amp;rdquo;，这样即使你不小心关掉了终端，终端中正在运行的程序不会退出，你仍然可以使用 &lt;code&gt;tmux attach&lt;/code&gt;切换到会话中来，同时，一个session可以管理多个窗口和窗格，窗口之间能快速切换，能很大的提高工作效率。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>打造最强终端之一：Fish shell简明教程</title>
+      <link>https://lzhujian.github.io/post/1.fish-tutorial/</link>
+      <pubDate>Wed, 31 Jul 2019 00:01:24 +0800</pubDate>
+      
+      <guid>https://lzhujian.github.io/post/1.fish-tutorial/</guid>
+      
+        <description>
+
+&lt;p&gt;本系列文章包括3篇，主要分享我在后端开发过程中使用终端的一些经验和心得，分享fish shell使用，使用tmux终端复用管理会话、窗口，以及vim插件使用，让vim变成强大的IDE。通过阅读本系列文章，你也可以打造一个高效易用的终端，能很大的提高工作的效率，让手指飞起来，让命令行飞起来。&lt;/p&gt;
+
+&lt;p&gt;本系列的3片文章包括：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/1.fish-tutorial/&#34;&gt;打造最强终端之一：Fish shell简明教程&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/2.tmux-tutorial/&#34;&gt;打造最强终端之二：Tmux简明教程&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/3.vim-tutorial/&#34;&gt;打造最强终端之三：vim插件使用教程&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;本系列文章使用的fish配置文件，tmux配置文件和vim插件都上传到了github, &lt;a href=&#34;https://github.com/lzhujian/tmux-vim-conf.git&#34;&gt;tmux-vim-conf&lt;/a&gt;，打造的终端效果图如下图：
+&lt;img src=&#34;https://lzhujian.github.io/image/image-20191123134730562.png&#34; alt=&#34;image-20191123134730562&#34; /&gt;
+图中显示当前为tutorial会话(session)，src窗口(window)，窗口左边窗格(pane)用vim编辑代码，右上窗格运行的top命令查看程序内存，右下窗格可以输入其他命令行。&lt;/p&gt;
+
+&lt;p&gt;本文为第一篇，Fish shell简明教程。&lt;/p&gt;
+
+&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;
+
+&lt;p&gt;Fish是“the &lt;strong&gt;f&lt;/strong&gt;riendly &lt;strong&gt;i&lt;/strong&gt;nteractive &lt;strong&gt;sh&lt;/strong&gt;ell”的简称，fish最大的特点就是功能强大，智能并且用户友好。Fish支持语法高亮，自动建议，标签完成等，而且配置十分简单。&lt;/p&gt;
+
+&lt;h1 id=&#34;安装&#34;&gt;安装&lt;/h1&gt;
+
+&lt;p&gt;ubuntu用户通过apt-get安装，mac用户可以使用brew安装&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# for ubuntu user&lt;/span&gt;
+sudo apt-get install -y fish
+
+&lt;span class=&#34;c1&#34;&gt;# for mac user&lt;/span&gt;
+brew install fish&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;配置&#34;&gt;配置&lt;/h1&gt;
+
+&lt;p&gt;修改fish为默认终端&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;chsh -s /usr/bin/fish
+fish&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;fish的配置文件是&lt;code&gt;~/.config/fish/config.fish&lt;/code&gt;，每次fish运行都会加载这个配置文件。我们可以在里面添加自定义函数，同时，fish还提供了一个Web界面配置该文件。&lt;code&gt;fish_config&lt;/code&gt;执行后浏览器会打开本机的8000端口，用户可以在网页上配置fish。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt install vim -y&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;fish_config&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;Mac安装方式：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191122233340969.png&#34; alt=&#34;image-20191122233340969&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;fish_prompt配置文件是&lt;code&gt;~/.config/fish/functions/fish_prompt.fish&lt;/code&gt;，我的prompt配置了用户名，当前目录，git分支，git状态，suffix，可以修改&lt;code&gt;fish_prompt.fish&lt;/code&gt;自定义你的终端prompt。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191122234150816.png&#34; alt=&#34;image-20191122234150816&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;oh-my-fish&#34;&gt;oh-my-fish&lt;/h1&gt;
+
+&lt;p&gt;oh-my-fish是Fish的主题和插件管理工具(类似oh-my-zsh)，安装非常简单&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;brew install vim&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Installation&lt;/span&gt;
+curl -L https://get.oh-my.fish &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; fish&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2 id=&#34;3-2-配置及使用&#34;&gt;3.2 配置及使用&lt;/h2&gt;
-
-&lt;p&gt;我的vim配置基于 &lt;a href=&#34;https://exvim.github.io/&#34;&gt;exvim&lt;/a&gt; 修改，增加了 a.vim, ctrlp.vim, TabBar等插件，将vim的配置及插件拷贝到~目录即可直接使用，下面主要介绍下插件的使用:&lt;/p&gt;
+&lt;p&gt;安装完成后，使用&lt;code&gt;omf&lt;/code&gt;命令安装theme或plugin&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;omf --help &lt;span class=&#34;c1&#34;&gt;# 获取 help 信息&lt;/span&gt;
+omf theme  &lt;span class=&#34;c1&#34;&gt;# 列出可用的主题&lt;/span&gt;
+omf list &lt;span class=&#34;c1&#34;&gt;# 列出已安装的theme和plugin&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;使用&lt;code&gt;omf search&lt;/code&gt;查找plugins或者themes，然后使用&lt;code&gt;omf install&lt;/code&gt;安装packages&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -422,25 +684,31 @@ prefix - d &lt;span class=&#34;c1&#34;&gt;#detach tmux, 回话会保存，后续
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 配置，将 .vim* 拷贝到 ~ 用户HOME目录即可&lt;/span&gt;
-git clone https://github.com/lzhujian/tmux-vim-conf.git
-&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; tmux-vim-conf
-cp -r .vim* ~&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;omf search autojump
+omf install z
+&lt;span class=&#34;c1&#34;&gt;# omf也可以指定url安装package&lt;/span&gt;
+omf install https://github.com/jhillyerd/plugin-git &lt;span class=&#34;c1&#34;&gt;# 安装git plugin&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;code&gt;a.vim&lt;/code&gt; 用于c/c++头文件和.h文件自动跳转，在vim里使用 &lt;code&gt;:A&lt;/code&gt;即可在.h/.cpp文件之间来回切换&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191122232530058.png&#34; alt=&#34;image-20191122232530058&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;NERDTree&lt;/code&gt; 侧边的导航栏，快捷键 &lt;code&gt;ctrl-n&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;使用&#34;&gt;使用&lt;/h1&gt;
 
-&lt;p&gt;&lt;code&gt;TabBar&lt;/code&gt;当打开多个文件时，顶部栏展示打开的各个文件，使用 &lt;code&gt;ctrl-h/l&lt;/code&gt;左右切换打开的文件，&lt;code&gt;ctrl-x&lt;/code&gt;关闭当前tab&lt;/p&gt;
+&lt;p&gt;fish支持&lt;strong&gt;语法高亮&lt;/strong&gt;，非法的命令显示默认的红色，命令有效后变成另外颜色。有效的路径用下划线标识&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;ctrlp.vim&lt;/code&gt; 快捷键&lt;code&gt;ctrl-p&lt;/code&gt;，在vim底部打开buffer，ctrlp匹配输入的文件名，&lt;code&gt;ctrl-j/k&lt;/code&gt;上下移动，快速打开文件&lt;/p&gt;
+&lt;p&gt;fish支持&lt;strong&gt;自动补全&lt;/strong&gt;，输入命令时，在光标右侧显示建议(灰色)，使用&lt;code&gt;ctrl+f&lt;/code&gt;或者&lt;code&gt;→(键盘右键)&lt;/code&gt;接受建议，&lt;code&gt;alt+→&lt;/code&gt;接受部分建议&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;exvim&lt;/code&gt; 使用vim打开xxx.exvim会在当前目录新建exvim project，exvim包含一系列plugin和快捷键，详细可以参考exvim官方文档&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191122232932728.png&#34; alt=&#34;image-20191122232932728&#34; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;3-3-参考&#34;&gt;3.3 参考&lt;/h2&gt;
+&lt;h1 id=&#34;参考&#34;&gt;参考&lt;/h1&gt;
 
-&lt;p&gt;exvim官网 &lt;a href=&#34;https://exvim.github.io/docs-zh/&#34;&gt;exvim doc&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Fish官方的 &lt;a href=&#34;https://fishshell.com/docs/current/tutorial.html&#34;&gt;Fish tutorial&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;阮一峰的教程 &lt;a href=&#34;http://www.ruanyifeng.com/blog/2017/05/fish_shell.html&#34;&gt;Fish shell入门教程&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;oh-my-fish &lt;a href=&#34;https://github.com/oh-my-fish/oh-my-fish&#34;&gt;oh-my-fish&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;fish git plugin &lt;a href=&#34;https://github.com/jhillyerd/plugin-git&#34;&gt;plugin-git&lt;/a&gt;&lt;/p&gt;
 </description>
       
     </item>
