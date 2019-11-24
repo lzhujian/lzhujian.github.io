@@ -72,7 +72,7 @@
 
 &lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/3.vim-tutorial/&#34;&gt;打造最强终端之三：vim插件使用教程&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;本系列文章使用的fish配置文件，tmux配置文件和vim插件都上传到了github, &lt;a href=&#34;https://github.com/lzhujian/tmux-vim-conf.git&#34;&gt;tmux-vim-conf&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;本系列文章使用的fish配置文件，tmux配置文件和vim插件都上传到了github, &lt;a href=&#34;https://github.com/lzhujian/cool-terminal-conf&#34;&gt;cool-terminal-conf&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;本文为第三篇，vim插件使用教程。&lt;/p&gt;
 
@@ -93,7 +93,7 @@
 
 &lt;p&gt;生成的工程结构如下图：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191118142838343.png&#34; alt=&#34;image-20191118142838343&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/terminal-tutorial/image-20191118142838343.png&#34; alt=&#34;image-20191118142838343&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;本节涉及的使用命令有&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -136,13 +136,13 @@
 
 &lt;p&gt;搜索完成后将在&lt;code&gt;全局搜索窗口&lt;/code&gt;显示搜索结果，如下图所示&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191118164436055.png&#34; alt=&#34;image-20191118164436055&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/terminal-tutorial/image-20191118164436055.png&#34; alt=&#34;image-20191118164436055&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;过滤搜索结果&#34;&gt;过滤搜索结果&lt;/h2&gt;
 
 &lt;p&gt;上图是我们全局搜索session的结果，包含session, Seesion, new_session等包含session文本的结果，那如何对搜索结果进行进一步过滤呢，比如过滤出Session的结果。具体操作：在搜索结果窗口搜索 &lt;code&gt;/\&amp;lt;Session\&amp;gt;&lt;/code&gt;，该命令表示搜索完整的Session单词，然后按下&lt;code&gt;&amp;lt;leader&amp;gt;r&lt;/code&gt;对搜索结果进行过滤，这样，搜索窗口就只包含匹配&lt;Session&gt;单词的结果了，如下图所示&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191118164614961.png&#34; alt=&#34;image-20191118164614961&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/terminal-tutorial/image-20191118164614961.png&#34; alt=&#34;image-20191118164614961&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;问题:&lt;/strong&gt; 当我们使用 :GS 搜索文本 tcp::socket时，发现没有输出结果，而我们确定代码中肯定包含 tcp::socket 文本，这是因为ex-gsearch仅支持 &lt;word&gt;，所以包含&lt;code&gt;: , 空格&lt;/code&gt; 的关键字无法搜索到。解决办法就只能分两步：首先搜索一个单词，然后在搜索结果窗口中过滤搜索结果，将完整的 搜索词 过滤出来&lt;/p&gt;
 
@@ -165,7 +165,7 @@
 &lt;/div&gt;
 &lt;p&gt;下图为光标在UDPTransport下， &lt;leader&gt;sg 展示的 symbols窗口&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191118170453627.png&#34; alt=&#34;image-20191118170453627&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/terminal-tutorial/image-20191118170453627.png&#34; alt=&#34;image-20191118170453627&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;其他插件&#34;&gt;其他插件&lt;/h1&gt;
 
@@ -173,13 +173,13 @@
 
 &lt;p&gt;ctrlp用于快速打开文件，按下&lt;code&gt;ctrl-p&lt;/code&gt;，然后输入要匹配的文件名，&lt;code&gt;ctrl-j ctrl-k&lt;/code&gt;上下移动光标，选择要打开的文件&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191118172121262.png&#34; alt=&#34;image-20191118172121262&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/terminal-tutorial/image-20191118172121262.png&#34; alt=&#34;image-20191118172121262&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;tabbar&#34;&gt;TabBar&lt;/h2&gt;
 
 &lt;p&gt;TabBar插件使vim打开的文件在顶部以tab的形式展示，如下图所示&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191118172332182.png&#34; alt=&#34;image-20191118172332182&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/terminal-tutorial/image-20191118172332182.png&#34; alt=&#34;image-20191118172332182&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;我修改了一些快捷方式：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -198,13 +198,13 @@ ctrl-x  关闭tab&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
 &lt;p&gt;a.vim主要用于头文件和源文件之间的快速跳转，比如正在编辑tcp.h，按下 &lt;code&gt;:A&lt;/code&gt; 即可快速打开 tcp.cpp&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191118172829173.png&#34; alt=&#34;image-20191118172829173&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/terminal-tutorial/image-20191118172829173.png&#34; alt=&#34;image-20191118172829173&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;nerdtree&#34;&gt;NERDTree&lt;/h2&gt;
 
 &lt;p&gt;NERDTree用于文件浏览，在展示当前目录下的所有文件，快捷方式我设置的为 &lt;code&gt;ctrl-n&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191118173210971.png&#34; alt=&#34;image-20191118173210971&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/terminal-tutorial/image-20191118173210971.png&#34; alt=&#34;image-20191118173210971&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;总结&#34;&gt;总结&lt;/h1&gt;
 
@@ -236,7 +236,7 @@ ctrl-x  关闭tab&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/3.vim-tutorial/&#34;&gt;打造最强终端之三：vim插件使用教程&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;本系列文章使用的fish配置文件，tmux配置文件和vim插件都上传到了github, &lt;a href=&#34;https://github.com/lzhujian/tmux-vim-conf.git&#34;&gt;tmux-vim-conf&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;本系列文章使用的fish配置文件，tmux配置文件和vim插件都上传到了github, &lt;a href=&#34;https://github.com/lzhujian/cool-terminal-conf&#34;&gt;cool-terminal-conf&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;本文为第二篇，Tmux简明教程。&lt;/p&gt;
 
@@ -474,7 +474,7 @@ d   &lt;span class=&#34;c1&#34;&gt;# 断开会话&lt;/span&gt;&lt;/code&gt;&lt;/
 &lt;/div&gt;
 &lt;p&gt;下图展示&lt;code&gt;&amp;lt;prefix&amp;gt;-s&lt;/code&gt;列出所有session的结果，我们只窗口了一个blog会话，选择session时，也会展示该session中各窗口的缩略图。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191123002755193.png&#34; alt=&#34;image-20191123002755193&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/terminal-tutorial/image-20191123002755193.png&#34; alt=&#34;image-20191123002755193&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;窗口-window-管理&#34;&gt;窗口(window)管理&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -503,7 +503,7 @@ p &lt;span class=&#34;c1&#34;&gt;# 选择上一个窗口&lt;/span&gt;
 &lt;/div&gt;
 &lt;p&gt;下图展示&lt;code&gt;&amp;lt;prefix&amp;gt;-w&lt;/code&gt;列出所有窗口的结果，可以看到blog会话包含了hugo, post, udp 3个窗口，选择某个窗口时也展示了该窗口包含的pane。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191123002526507.png&#34; alt=&#34;image-20191123002526507&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/terminal-tutorial/image-20191123002526507.png&#34; alt=&#34;image-20191123002526507&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;窗格-pane-管理&#34;&gt;窗格(pane)管理&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -546,7 +546,7 @@ ctrl-l  &lt;span class=&#34;c1&#34;&gt;# 向右resize窗格&lt;/span&gt;&lt;/cod
 &lt;/div&gt;
 &lt;p&gt;下图展示&lt;code&gt;&amp;lt;prefix&amp;gt;-q&lt;/code&gt;显示pane的编号，可以看到窗口3(udp)包含了 0 1 2 三个pane，&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/tmux-pane-shot.png&#34; alt=&#34;tmux-pane-shot&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/terminal-tutorial/tmux-pane-shot.png&#34; alt=&#34;tmux-pane-shot&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;其他命令&#34;&gt;其他命令&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -603,8 +603,8 @@ tmux source-file ~/.tmux.conf&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;
 
 &lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/3.vim-tutorial/&#34;&gt;打造最强终端之三：vim插件使用教程&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;本系列文章使用的fish配置文件，tmux配置文件和vim插件都上传到了github, &lt;a href=&#34;https://github.com/lzhujian/tmux-vim-conf.git&#34;&gt;tmux-vim-conf&lt;/a&gt;，打造的终端效果图如下图：
-&lt;img src=&#34;https://lzhujian.github.io/image/image-20191123134730562.png&#34; alt=&#34;image-20191123134730562&#34; /&gt;
+&lt;p&gt;本系列文章使用的fish配置文件，tmux配置文件和vim插件都上传到了github, &lt;a href=&#34;https://github.com/lzhujian/cool-terminal-conf&#34;&gt;cool-terminal-conf&lt;/a&gt;，打造的终端效果图如下图：
+&lt;img src=&#34;https://lzhujian.github.io/image/terminal-tutorial/image-20191123134730562.png&#34; alt=&#34;image-20191123134730562&#34; /&gt;
 图中显示当前为tutorial会话(session)，src窗口(window)，窗口左边窗格(pane)用vim编辑代码，右上窗格运行的top命令查看程序内存，右下窗格可以输入其他命令行。&lt;/p&gt;
 
 &lt;p&gt;本文为第一篇，Fish shell简明教程。&lt;/p&gt;
@@ -654,11 +654,11 @@ fish&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;fish_config&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191122233340969.png&#34; alt=&#34;image-20191122233340969&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/terminal-tutorial/image-20191122233340969.png&#34; alt=&#34;image-20191122233340969&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;fish_prompt配置文件是&lt;code&gt;~/.config/fish/functions/fish_prompt.fish&lt;/code&gt;，我的prompt配置了用户名，当前目录，git分支，git状态，suffix，可以修改&lt;code&gt;fish_prompt.fish&lt;/code&gt;自定义你的终端prompt。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191122234150816.png&#34; alt=&#34;image-20191122234150816&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/terminal-tutorial/image-20191122234150816.png&#34; alt=&#34;image-20191122234150816&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;oh-my-fish&#34;&gt;oh-my-fish&lt;/h1&gt;
 
@@ -701,7 +701,7 @@ omf install z
 omf install https://github.com/jhillyerd/plugin-git &lt;span class=&#34;c1&#34;&gt;# 安装git plugin&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191122232530058.png&#34; alt=&#34;image-20191122232530058&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/terminal-tutorial/image-20191122232530058.png&#34; alt=&#34;image-20191122232530058&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;使用&#34;&gt;使用&lt;/h1&gt;
 
@@ -709,7 +709,7 @@ omf install https://github.com/jhillyerd/plugin-git &lt;span class=&#34;c1&#34;&
 
 &lt;p&gt;fish支持&lt;strong&gt;自动补全&lt;/strong&gt;，输入命令时，在光标右侧显示建议(灰色)，使用&lt;code&gt;ctrl+f&lt;/code&gt;或者&lt;code&gt;→(键盘右键)&lt;/code&gt;接受建议，&lt;code&gt;alt+→&lt;/code&gt;接受部分建议&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/image-20191122232932728.png&#34; alt=&#34;image-20191122232932728&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/terminal-tutorial/image-20191122232932728.png&#34; alt=&#34;image-20191122232932728&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;参考&#34;&gt;参考&lt;/h1&gt;
 
