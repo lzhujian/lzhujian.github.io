@@ -64,7 +64,7 @@
 
 &lt;p&gt;本系列文章包括3篇，主要分享我在后端开发过程中使用终端的一些经验和心得，分享fish shell使用，使用tmux终端复用管理会话、窗口，以及vim插件使用，让vim变成强大的IDE。通过阅读本系列文章，你也可以打造一个高效易用的终端，能很大的提高工作的效率，让手指飞起来，让命令行飞起来。&lt;/p&gt;
 
-&lt;p&gt;本系列的3片文章包括：&lt;/p&gt;
+&lt;p&gt;本系列的3篇文章包括：&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/1.fish-tutorial/&#34;&gt;打造最强终端之一：Fish shell简明教程&lt;/a&gt;&lt;/p&gt;
 
@@ -228,7 +228,7 @@ ctrl-x  关闭tab&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
 &lt;p&gt;本系列文章包括3篇，主要分享我在后端开发过程中使用终端的一些经验和心得，分享fish shell使用，使用tmux终端复用管理会话、窗口，以及vim插件使用，让vim变成强大的IDE。通过阅读本系列文章，你也可以打造一个高效易用的终端，能很大的提高工作的效率，让手指飞起来，让命令行飞起来。&lt;/p&gt;
 
-&lt;p&gt;本系列的3片文章包括：&lt;/p&gt;
+&lt;p&gt;本系列的3篇文章包括：&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/1.fish-tutorial/&#34;&gt;打造最强终端之一：Fish shell简明教程&lt;/a&gt;&lt;/p&gt;
 
@@ -595,7 +595,7 @@ tmux source-file ~/.tmux.conf&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;
 
 &lt;p&gt;本系列文章包括3篇，主要分享我在后端开发过程中使用终端的一些经验和心得，分享fish shell使用，使用tmux终端复用管理会话、窗口，以及vim插件使用，让vim变成强大的IDE。通过阅读本系列文章，你也可以打造一个高效易用的终端，能很大的提高工作的效率，让手指飞起来，让命令行飞起来。&lt;/p&gt;
 
-&lt;p&gt;本系列的3片文章包括：&lt;/p&gt;
+&lt;p&gt;本系列的3篇文章包括：&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/1.fish-tutorial/&#34;&gt;打造最强终端之一：Fish shell简明教程&lt;/a&gt;&lt;/p&gt;
 
