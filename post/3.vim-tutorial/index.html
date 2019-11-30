@@ -372,7 +372,7 @@
 
 <p>生成的工程结构如下图：</p>
 
-<p><img src="/image/terminal-tutorial/image-20191118142838343.png" alt="image-20191118142838343" /></p>
+<p><img src="/image/terminal-tutorial/3-vim-exvim-project.png" alt="3-vim-exvim-project" /></p>
 
 <p>本节涉及的使用命令有</p>
 <div class="highlight"><div class="chroma">
@@ -415,13 +415,13 @@
 
 <p>搜索完成后将在<code>全局搜索窗口</code>显示搜索结果，如下图所示</p>
 
-<p><img src="/image/terminal-tutorial/image-20191118164436055.png" alt="image-20191118164436055" /></p>
+<p><img src="/image/terminal-tutorial/3-vim-exvim-search.png" alt="3-vim-exvim-search" /></p>
 
 <h2 id="过滤搜索结果">过滤搜索结果</h2>
 
 <p>上图是我们全局搜索session的结果，包含session, Seesion, new_session等包含session文本的结果，那如何对搜索结果进行进一步过滤呢，比如过滤出Session的结果。具体操作：在搜索结果窗口搜索 <code>/\&lt;Session\&gt;</code>，该命令表示搜索完整的Session单词，然后按下<code>&lt;leader&gt;r</code>对搜索结果进行过滤，这样，搜索窗口就只包含匹配<Session>单词的结果了，如下图所示</p>
 
-<p><img src="/image/terminal-tutorial/image-20191118164614961.png" alt="image-20191118164614961" /></p>
+<p><img src="/image/terminal-tutorial/3-vim-exvim-search-filter.png" alt="3-vim-exvim-search-filter" /></p>
 
 <p><strong>问题:</strong> 当我们使用 :GS 搜索文本 tcp::socket时，发现没有输出结果，而我们确定代码中肯定包含 tcp::socket 文本，这是因为ex-gsearch仅支持 <word>，所以包含<code>: , 空格</code> 的关键字无法搜索到。解决办法就只能分两步：首先搜索一个单词，然后在搜索结果窗口中过滤搜索结果，将完整的 搜索词 过滤出来</p>
 
@@ -444,7 +444,7 @@
 </div>
 <p>下图为光标在UDPTransport下， <leader>sg 展示的 symbols窗口</p>
 
-<p><img src="/image/terminal-tutorial/image-20191118170453627.png" alt="image-20191118170453627" /></p>
+<p><img src="/image/terminal-tutorial/3-vim-exvim-symbols.png" alt="3-vim-exvim-symbols" /></p>
 
 <h1 id="其他插件">其他插件</h1>
 
@@ -452,13 +452,13 @@
 
 <p>ctrlp用于快速打开文件，按下<code>ctrl-p</code>，然后输入要匹配的文件名，<code>ctrl-j ctrl-k</code>上下移动光标，选择要打开的文件</p>
 
-<p><img src="/image/terminal-tutorial/image-20191118172121262.png" alt="image-20191118172121262" /></p>
+<p><img src="/image/terminal-tutorial/3-vim-ctrlp.png" alt="3-vim-ctrlp" /></p>
 
 <h2 id="tabbar">TabBar</h2>
 
 <p>TabBar插件使vim打开的文件在顶部以tab的形式展示，如下图所示</p>
 
-<p><img src="/image/terminal-tutorial/image-20191118172332182.png" alt="image-20191118172332182" /></p>
+<p><img src="/image/terminal-tutorial/3-vim-tabbar.png" alt="3-vim-tabbar" /></p>
 
 <p>我修改了一些快捷方式：</p>
 <div class="highlight"><div class="chroma">
@@ -477,13 +477,13 @@ ctrl-x  关闭tab</code></pre></td></tr></table>
 
 <p>a.vim主要用于头文件和源文件之间的快速跳转，比如正在编辑tcp.h，按下 <code>:A</code> 即可快速打开 tcp.cpp</p>
 
-<p><img src="/image/terminal-tutorial/image-20191118172829173.png" alt="image-20191118172829173" /></p>
+<p><img src="/image/terminal-tutorial/3-vim-a.png" alt="3-vim-a" /></p>
 
 <h2 id="nerdtree">NERDTree</h2>
 
 <p>NERDTree用于文件浏览，在展示当前目录下的所有文件，快捷方式我设置的为 <code>ctrl-n</code></p>
 
-<p><img src="/image/terminal-tutorial/image-20191118173210971.png" alt="image-20191118173210971" /></p>
+<p><img src="/image/terminal-tutorial/3-vim-nerdtree.png" alt="3-vim-nerdtree" /></p>
 
 <h1 id="总结">总结</h1>
 
