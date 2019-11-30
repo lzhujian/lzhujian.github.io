@@ -68,7 +68,7 @@
 
 &lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/1.fish-tutorial/&#34;&gt;打造最强终端之一：Fish shell简明教程&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/2.tmux-tutorial/&#34;&gt;打造最强终端之二：Tmux简明教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/2.tmux-tutorial/&#34;&gt;打造最强终端之二：Tmux配置及使用教程&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/3.vim-tutorial/&#34;&gt;打造最强终端之三：vim插件使用教程&lt;/a&gt;&lt;/p&gt;
 
@@ -163,7 +163,7 @@
 :SL &amp;lt;your-tag&amp;gt; 使用&amp;lt;your-tag&amp;gt;作为搜索tag，列出所有匹配项&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;下图为光标在UDPTransport下， &lt;leader&gt;sg 展示的 symbols窗口&lt;/p&gt;
+&lt;p&gt;下图为光标在TCPConnection下， &lt;leader&gt;sg 展示的 symbols窗口&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://lzhujian.github.io/image/terminal-tutorial/3-vim-exvim-symbols.png&#34; alt=&#34;3-vim-exvim-symbols&#34; /&gt;&lt;/p&gt;
 
@@ -218,7 +218,7 @@ ctrl-x  关闭tab&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
     </item>
     
     <item>
-      <title>打造最强终端之二：Tmux简明教程</title>
+      <title>打造最强终端之二：Tmux配置及使用教程</title>
       <link>https://lzhujian.github.io/post/2.tmux-tutorial/</link>
       <pubDate>Sat, 23 Nov 2019 00:08:07 +0800</pubDate>
       
@@ -232,7 +232,7 @@ ctrl-x  关闭tab&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/1.fish-tutorial/&#34;&gt;打造最强终端之一：Fish shell简明教程&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/2.tmux-tutorial/&#34;&gt;打造最强终端之二：Tmux简明教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/2.tmux-tutorial/&#34;&gt;打造最强终端之二：Tmux配置及使用教程&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/3.vim-tutorial/&#34;&gt;打造最强终端之三：vim插件使用教程&lt;/a&gt;&lt;/p&gt;
 
@@ -599,7 +599,7 @@ tmux source-file ~/.tmux.conf&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;
 
 &lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/1.fish-tutorial/&#34;&gt;打造最强终端之一：Fish shell简明教程&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/2.tmux-tutorial/&#34;&gt;打造最强终端之二：Tmux简明教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/2.tmux-tutorial/&#34;&gt;打造最强终端之二：Tmux配置及使用教程&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/3.vim-tutorial/&#34;&gt;打造最强终端之三：vim插件使用教程&lt;/a&gt;&lt;/p&gt;
 
