@@ -55,10 +55,10 @@
     
     <item>
       <title>打造最强终端之三：vim插件使用教程</title>
-      <link>https://lzhujian.github.io/post/3.vim-tutorial/</link>
+      <link>https://lzhujian.github.io/post/terminal/3.vim-tutorial/</link>
       <pubDate>Sat, 23 Nov 2019 00:41:18 +0800</pubDate>
       
-      <guid>https://lzhujian.github.io/post/3.vim-tutorial/</guid>
+      <guid>https://lzhujian.github.io/post/terminal/3.vim-tutorial/</guid>
       
         <description>
 
@@ -219,10 +219,10 @@ ctrl-x  关闭tab&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
     
     <item>
       <title>打造最强终端之二：Tmux配置及使用教程</title>
-      <link>https://lzhujian.github.io/post/2.tmux-tutorial/</link>
+      <link>https://lzhujian.github.io/post/terminal/2.tmux-tutorial/</link>
       <pubDate>Sat, 23 Nov 2019 00:08:07 +0800</pubDate>
       
-      <guid>https://lzhujian.github.io/post/2.tmux-tutorial/</guid>
+      <guid>https://lzhujian.github.io/post/terminal/2.tmux-tutorial/</guid>
       
         <description>
 
@@ -586,10 +586,10 @@ tmux source-file ~/.tmux.conf&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;
     
     <item>
       <title>打造最强终端之一：Fish shell简明教程</title>
-      <link>https://lzhujian.github.io/post/1.fish-tutorial/</link>
+      <link>https://lzhujian.github.io/post/terminal/1.fish-tutorial/</link>
       <pubDate>Wed, 31 Jul 2019 00:01:24 +0800</pubDate>
       
-      <guid>https://lzhujian.github.io/post/1.fish-tutorial/</guid>
+      <guid>https://lzhujian.github.io/post/terminal/1.fish-tutorial/</guid>
       
         <description>
 
@@ -726,10 +726,10 @@ omf install https://github.com/jhillyerd/plugin-git &lt;span class=&#34;c1&#34;&
     
     <item>
       <title>基于facenet实现人脸识别-2</title>
-      <link>https://lzhujian.github.io/post/real-time-face-recognition/</link>
+      <link>https://lzhujian.github.io/post/facenet/real-time-face-recognition/</link>
       <pubDate>Thu, 14 Feb 2019 15:56:04 +0800</pubDate>
       
-      <guid>https://lzhujian.github.io/post/real-time-face-recognition/</guid>
+      <guid>https://lzhujian.github.io/post/facenet/real-time-face-recognition/</guid>
       
         <description>
 
@@ -840,10 +840,10 @@ while True:
     
     <item>
       <title>基于facenet实现人脸识别-1</title>
-      <link>https://lzhujian.github.io/post/face-recognition-with-facenet/</link>
+      <link>https://lzhujian.github.io/post/facenet/face-recognition-with-facenet/</link>
       <pubDate>Thu, 31 Jan 2019 14:41:16 +0800</pubDate>
       
-      <guid>https://lzhujian.github.io/post/face-recognition-with-facenet/</guid>
+      <guid>https://lzhujian.github.io/post/facenet/face-recognition-with-facenet/</guid>
       
         <description>
 

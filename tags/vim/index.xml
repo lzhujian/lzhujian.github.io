@@ -13,10 +13,10 @@
     
     <item>
       <title>打造最强终端之三：vim插件使用教程</title>
-      <link>https://lzhujian.github.io/post/3.vim-tutorial/</link>
+      <link>https://lzhujian.github.io/post/terminal/3.vim-tutorial/</link>
       <pubDate>Sat, 23 Nov 2019 00:41:18 +0800</pubDate>
       
-      <guid>https://lzhujian.github.io/post/3.vim-tutorial/</guid>
+      <guid>https://lzhujian.github.io/post/terminal/3.vim-tutorial/</guid>
       <description>本系列文章包括3篇，主要分享我在后端开发过程中使用终端的一些经验和心得，分享fish shell使用，使用tmux终端复用管理会话、窗口，以及</description>
     </item>
     

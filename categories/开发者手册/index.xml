@@ -13,28 +13,28 @@
     
     <item>
       <title>打造最强终端之三：vim插件使用教程</title>
-      <link>https://lzhujian.github.io/post/3.vim-tutorial/</link>
+      <link>https://lzhujian.github.io/post/terminal/3.vim-tutorial/</link>
       <pubDate>Sat, 23 Nov 2019 00:41:18 +0800</pubDate>
       
-      <guid>https://lzhujian.github.io/post/3.vim-tutorial/</guid>
+      <guid>https://lzhujian.github.io/post/terminal/3.vim-tutorial/</guid>
       <description>本系列文章包括3篇，主要分享我在后端开发过程中使用终端的一些经验和心得，分享fish shell使用，使用tmux终端复用管理会话、窗口，以及</description>
     </item>
     
     <item>
       <title>打造最强终端之二：Tmux配置及使用教程</title>
-      <link>https://lzhujian.github.io/post/2.tmux-tutorial/</link>
+      <link>https://lzhujian.github.io/post/terminal/2.tmux-tutorial/</link>
       <pubDate>Sat, 23 Nov 2019 00:08:07 +0800</pubDate>
       
-      <guid>https://lzhujian.github.io/post/2.tmux-tutorial/</guid>
+      <guid>https://lzhujian.github.io/post/terminal/2.tmux-tutorial/</guid>
       <description>本系列文章包括3篇，主要分享我在后端开发过程中使用终端的一些经验和心得，分享fish shell使用，使用tmux终端复用管理会话、窗口，以及</description>
     </item>
     
     <item>
       <title>打造最强终端之一：Fish shell简明教程</title>
-      <link>https://lzhujian.github.io/post/1.fish-tutorial/</link>
+      <link>https://lzhujian.github.io/post/terminal/1.fish-tutorial/</link>
       <pubDate>Wed, 31 Jul 2019 00:01:24 +0800</pubDate>
       
-      <guid>https://lzhujian.github.io/post/1.fish-tutorial/</guid>
+      <guid>https://lzhujian.github.io/post/terminal/1.fish-tutorial/</guid>
       <description>本系列文章包括3篇，主要分享我在后端开发过程中使用终端的一些经验和心得，分享fish shell使用，使用tmux终端复用管理会话、窗口，以及</description>
     </item>
     

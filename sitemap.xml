@@ -39,7 +39,7 @@
   </url>
   
   <url>
-    <loc>https://lzhujian.github.io/post/3.vim-tutorial/</loc>
+    <loc>https://lzhujian.github.io/post/terminal/3.vim-tutorial/</loc>
     <lastmod>2019-11-23T00:41:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -58,7 +58,7 @@
   </url>
   
   <url>
-    <loc>https://lzhujian.github.io/post/2.tmux-tutorial/</loc>
+    <loc>https://lzhujian.github.io/post/terminal/2.tmux-tutorial/</loc>
     <lastmod>2019-11-23T00:08:07+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -71,7 +71,7 @@
   </url>
   
   <url>
-    <loc>https://lzhujian.github.io/post/1.fish-tutorial/</loc>
+    <loc>https://lzhujian.github.io/post/terminal/1.fish-tutorial/</loc>
     <lastmod>2019-07-31T00:01:24+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -102,14 +102,14 @@
   </url>
   
   <url>
-    <loc>https://lzhujian.github.io/post/real-time-face-recognition/</loc>
+    <loc>https://lzhujian.github.io/post/facenet/real-time-face-recognition/</loc>
     <lastmod>2019-02-14T15:56:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://lzhujian.github.io/post/face-recognition-with-facenet/</loc>
+    <loc>https://lzhujian.github.io/post/facenet/face-recognition-with-facenet/</loc>
     <lastmod>2019-01-31T14:41:16+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
