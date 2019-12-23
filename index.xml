@@ -66,16 +66,44 @@
 
 &lt;p&gt;本系列的3篇文章包括：&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/1.fish-tutorial/&#34;&gt;打造最强终端之一：Fish shell简明教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/terminal/1.fish-tutorial/&#34;&gt;打造最强终端之一：Fish shell简明教程&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/2.tmux-tutorial/&#34;&gt;打造最强终端之二：Tmux配置及使用教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/terminal/2.tmux-tutorial/&#34;&gt;打造最强终端之二：Tmux配置及使用教程&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/3.vim-tutorial/&#34;&gt;打造最强终端之三：vim插件使用教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/terminal/3.vim-tutorial/&#34;&gt;打造最强终端之三：vim插件使用教程&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;本系列文章使用的fish配置文件，tmux配置文件和vim插件都上传到了github, &lt;a href=&#34;https://github.com/lzhujian/cool-terminal-conf&#34;&gt;cool-terminal-conf&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;本文为第三篇，vim插件使用教程。&lt;/p&gt;
 
+&lt;h1 id=&#34;依赖&#34;&gt;依赖&lt;/h1&gt;
+
+&lt;h2 id=&#34;id-utils&#34;&gt;id-utils&lt;/h2&gt;
+
+&lt;p&gt;id-utils包含了一系列实用工具，用于生成和查询符号，exvim使用id-utils生成符号索引，用于搜索。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# ubuntu&lt;/span&gt;
+sudo apt install id-utils&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;exuberant-ctags&#34;&gt;exuberant-ctags&lt;/h2&gt;
+
+&lt;p&gt;ctags主要是为源代码产生标签文件，从而实现代码的定义的跟踪跳转&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# ubuntu&lt;/span&gt;
+apt install exuberant-ctags&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;h1 id=&#34;exvim&#34;&gt;exVim&lt;/h1&gt;
 
 &lt;p&gt;exVim将vim打造成一个友好编程环境的项目，exVim引入vim中(.exvim)项目文件的概念。通过Vim编辑此项目文件（.exvim），将调用exVim插件。这样，您可以应用不同的Vim设置，插件设置，甚至可以根据不同项目的需要加载插件。通常，它使Vim成为世界上最好的IDE！&lt;/p&gt;
@@ -230,11 +258,11 @@ ctrl-x  关闭tab&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
 &lt;p&gt;本系列的3篇文章包括：&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/1.fish-tutorial/&#34;&gt;打造最强终端之一：Fish shell简明教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/terminal/1.fish-tutorial/&#34;&gt;打造最强终端之一：Fish shell简明教程&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/2.tmux-tutorial/&#34;&gt;打造最强终端之二：Tmux配置及使用教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/terminal/2.tmux-tutorial/&#34;&gt;打造最强终端之二：Tmux配置及使用教程&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/3.vim-tutorial/&#34;&gt;打造最强终端之三：vim插件使用教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/terminal/3.vim-tutorial/&#34;&gt;打造最强终端之三：vim插件使用教程&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;本系列文章使用的fish配置文件，tmux配置文件和vim插件都上传到了github, &lt;a href=&#34;https://github.com/lzhujian/cool-terminal-conf&#34;&gt;cool-terminal-conf&lt;/a&gt;.&lt;/p&gt;
 
@@ -597,11 +625,11 @@ tmux source-file ~/.tmux.conf&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;
 
 &lt;p&gt;本系列的3篇文章包括：&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/1.fish-tutorial/&#34;&gt;打造最强终端之一：Fish shell简明教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/terminal/1.fish-tutorial/&#34;&gt;打造最强终端之一：Fish shell简明教程&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/2.tmux-tutorial/&#34;&gt;打造最强终端之二：Tmux配置及使用教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/terminal/2.tmux-tutorial/&#34;&gt;打造最强终端之二：Tmux配置及使用教程&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/3.vim-tutorial/&#34;&gt;打造最强终端之三：vim插件使用教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lzhujian.github.io/post/terminal/3.vim-tutorial/&#34;&gt;打造最强终端之三：vim插件使用教程&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;本系列文章使用的fish配置文件，tmux配置文件和vim插件都上传到了github, &lt;a href=&#34;https://github.com/lzhujian/cool-terminal-conf&#34;&gt;cool-terminal-conf&lt;/a&gt;，打造的终端效果图如下图：
 &lt;img src=&#34;https://lzhujian.github.io/image/terminal-tutorial/cool-terminal-thumb.png&#34; alt=&#34;cool-terminal-thumb&#34; /&gt;

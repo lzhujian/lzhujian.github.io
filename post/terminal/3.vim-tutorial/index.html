@@ -69,7 +69,7 @@
 
 <meta itemprop="datePublished" content="2019-11-23T00:41:18&#43;08:00" />
 <meta itemprop="dateModified" content="2019-11-23T00:41:18&#43;08:00" />
-<meta itemprop="wordCount" content="2154">
+<meta itemprop="wordCount" content="2262">
 
 
 
@@ -315,6 +315,11 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
+<li><a href="#依赖">依赖</a>
+<ul>
+<li><a href="#id-utils">id-utils</a></li>
+<li><a href="#exuberant-ctags">exuberant-ctags</a></li>
+</ul></li>
 <li><a href="#exvim">exVim</a>
 <ul>
 <li><a href="#入门">入门</a></li>
@@ -345,16 +350,44 @@
 
 <p>本系列的3篇文章包括：</p>
 
-<p><a href="https://lzhujian.github.io/post/1.fish-tutorial/">打造最强终端之一：Fish shell简明教程</a></p>
+<p><a href="https://lzhujian.github.io/post/terminal/1.fish-tutorial/">打造最强终端之一：Fish shell简明教程</a></p>
 
-<p><a href="https://lzhujian.github.io/post/2.tmux-tutorial/">打造最强终端之二：Tmux配置及使用教程</a></p>
+<p><a href="https://lzhujian.github.io/post/terminal/2.tmux-tutorial/">打造最强终端之二：Tmux配置及使用教程</a></p>
 
-<p><a href="https://lzhujian.github.io/post/3.vim-tutorial/">打造最强终端之三：vim插件使用教程</a></p>
+<p><a href="https://lzhujian.github.io/post/terminal/3.vim-tutorial/">打造最强终端之三：vim插件使用教程</a></p>
 
 <p>本系列文章使用的fish配置文件，tmux配置文件和vim插件都上传到了github, <a href="https://github.com/lzhujian/cool-terminal-conf">cool-terminal-conf</a>.</p>
 
 <p>本文为第三篇，vim插件使用教程。</p>
 
+<h1 id="依赖">依赖</h1>
+
+<h2 id="id-utils">id-utils</h2>
+
+<p>id-utils包含了一系列实用工具，用于生成和查询符号，exvim使用id-utils生成符号索引，用于搜索。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># ubuntu</span>
+sudo apt install id-utils</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="exuberant-ctags">exuberant-ctags</h2>
+
+<p>ctags主要是为源代码产生标签文件，从而实现代码的定义的跟踪跳转</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># ubuntu</span>
+apt install exuberant-ctags</code></pre></td></tr></table>
+</div>
+</div>
 <h1 id="exvim">exVim</h1>
 
 <p>exVim将vim打造成一个友好编程环境的项目，exVim引入vim中(.exvim)项目文件的概念。通过Vim编辑此项目文件（.exvim），将调用exVim插件。这样，您可以应用不同的Vim设置，插件设置，甚至可以根据不同项目的需要加载插件。通常，它使Vim成为世界上最好的IDE！</p>
